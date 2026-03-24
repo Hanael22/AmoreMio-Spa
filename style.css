@@ -28,10 +28,9 @@ body{
   align-items:center;
 }
 
+/* LOGO */
 .logo-img{
-  height:60px;
-  width:auto;
-  object-fit:contain;
+  height:80px;
 }
 
 /* BOTÓN NAV */
@@ -56,14 +55,6 @@ body{
   text-align:center;
 }
 
-.hero h1{
-  margin-bottom:10px;
-}
-
-.lead{
-  color:var(--muted);
-}
-
 /* BOTONES */
 .btn{
   background:var(--rosa);
@@ -73,31 +64,27 @@ body{
   text-decoration:none;
   border:none;
   cursor:pointer;
-  transition:.3s;
 }
 
-.btn:hover{
-  background:#c57484;
-}
-
-.btn.ghost{
-  background:white;
-  color:var(--rosa);
-  border:1px solid var(--rosa);
-}
-
-/* SERVICES */
-.services{
-  margin-top:30px;
-}
-
-.zone-title{
+/* ZONAS */
+.zone{
   margin-top:40px;
   text-align:center;
 }
 
-.zone-phrase{
-  text-align:center;
+/* 🔥 IMAGENES DE ZONA (AQUI ESTABA EL PROBLEMA) */
+.zone-img{
+  width:100%;
+  max-width:400px;
+  height:200px;
+  object-fit:cover;
+  border-radius:15px;
+  display:block;
+  margin:0 auto 15px;
+}
+
+/* FRASE */
+.phrase{
   color:var(--rosa);
   font-weight:bold;
 }
@@ -105,35 +92,27 @@ body{
 /* GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:18px;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:15px;
   margin-top:15px;
 }
 
-/* CARDS */
-.service-card{
+/* 🔥 CARDS (AHORA SÍ FUNCIONAN) */
+.card{
   background:var(--blanco);
-  padding:15px;
+  padding:18px;
   border-radius:14px;
   text-align:center;
   box-shadow:0 6px 18px rgba(0,0,0,0.08);
-  transition:.3s;
   border:1px solid #f0dede;
-  cursor:pointer;
+  transition:all .3s ease;
+  font-weight:500;
 }
 
-.service-card:hover{
-  transform:translateY(-6px) scale(1.02);
-  box-shadow:0 10px 25px rgba(0,0,0,0.12);
-}
-
-/* IMÁGENES DENTRO DE CARDS (ARREGLA LO GIGANTE) */
-.service-card img{
-  width:100%;
-  height:140px;
-  object-fit:cover;
-  border-radius:10px;
-  margin-bottom:10px;
+/* ✨ EFECTO QUE TE GUSTABA */
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 30px rgba(0,0,0,0.15);
 }
 
 /* PROMO */
@@ -149,30 +128,6 @@ body{
   padding:25px;
   border-radius:15px;
   text-align:center;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
-}
-
-/* GALERÍA */
-.gallery-grid{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-.gallery-grid img{
-  width:32%;
-  height:180px;
-  object-fit:cover;
-  border-radius:12px;
-}
-
-/* TESTIMONIOS */
-.testimonials blockquote{
-  background:white;
-  padding:18px;
-  border-radius:12px;
-  border-left:4px solid var(--rosa);
-  color:var(--muted);
 }
 
 /* CONTACTO */
@@ -193,23 +148,17 @@ body{
   padding:12px;
   border-radius:10px;
   border:1px solid #ddd;
-  font-size:14px;
 }
 
-.form textarea{
-  min-height:100px;
-}
-
-/* CAJA INFO */
+/* INFO */
 .contact-info{
   background:white;
   padding:15px;
   border-radius:12px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
 /* FOOTER */
-.footer{
+footer{
   padding:20px;
   text-align:center;
   color:var(--muted);
@@ -219,9 +168,5 @@ body{
 @media(max-width:800px){
   .contact-grid{
     grid-template-columns:1fr;
-  }
-
-  .gallery-grid img{
-    width:100%;
   }
 }
