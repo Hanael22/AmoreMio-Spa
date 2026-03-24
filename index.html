@@ -120,23 +120,22 @@
 
 <div class="contact-grid">
 
-<form id="form">
+<form class="form" id="form">
+  <input id="nombre" type="text" placeholder="Nombre completo" required>
+  <input id="telefono" type="tel" placeholder="Teléfono / WhatsApp" required>
 
-<input id="nombre" placeholder="Nombre completo" required>
-<input id="telefono" placeholder="Teléfono" required>
+  <select id="servicio">
+    <option>Servicio deseado</option>
+    <option>Maderoterapia</option>
+    <option>Masaje relajante</option>
+    <option>Drenaje linfático</option>
+    <option>Cavitación</option>
+    <option>Radiofrecuencia</option>
+  </select>
 
-<select id="servicio">
-<option>Selecciona servicio</option>
-<option>Maderoterapia</option>
-<option>Cavitación</option>
-<option>Radiofrecuencia</option>
-<option>Drenaje linfático</option>
-</select>
+  <textarea id="mensaje" placeholder="Fecha/horario preferido"></textarea>
 
-<textarea id="mensaje" placeholder="Fecha y hora"></textarea>
-
-<button class="btn">Enviar por WhatsApp</button>
-
+  <button class="btn">Enviar por WhatsApp</button>
 </form>
 
 <div class="contact-info">
@@ -155,6 +154,27 @@
 </footer>
 
 <script>
+document.getElementById("form").addEventListener("submit", function(e){
+e.preventDefault();
+
+let nombre = document.getElementById("nombre").value;
+let telefono = document.getElementById("telefono").value;
+let servicio = document.getElementById("servicio").value;
+let mensaje = document.getElementById("mensaje").value;
+
+let texto = `Hola, quiero agendar cita:
+Nombre: ${nombre}
+Teléfono: ${telefono}
+Servicio: ${servicio}
+Mensaje: ${mensaje}`;
+
+let url = "https://wa.me/5215570662799?text=" + encodeURIComponent(texto);
+
+window.open(url, "_blank");
+});
+</script>
+
+  <script>
 document.getElementById("form").addEventListener("submit", function(e){
 e.preventDefault();
 
