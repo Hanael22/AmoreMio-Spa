@@ -1,119 +1,178 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Amore Mio Beauty Spa</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<title>Amore Mio Beauty Spa & Make Up</title>
+
+<link rel="stylesheet" href="style.css" />
+
 </head>
 
 <body>
 
 <header class="hero">
+
   <nav class="nav container">
-    <img src="logo.png" class="logo-img">
+    <img src="logo.png.jpg" class="logo-img">
+
     <a class="btn-cta" href="https://wa.me/5215570662799">Agenda</a>
   </nav>
 
-  <div class="hero-content container fade-in">
+  <div class="hero-content container">
     <h1>Tu cuidado, con elegancia y serenidad</h1>
     <p>Tratamientos profesionales para realzar tu belleza.</p>
+
+    <div class="actions">
+      <a href="#services" class="btn">Ver servicios</a>
+      <a href="#contact" class="btn ghost">Contacto</a>
+    </div>
   </div>
+
 </header>
 
 <main class="container">
 
-<section class="services">
+<!-- SERVICIOS -->
+<section id="services">
 
-<h2 class="fade-in">Nuestros servicios</h2>
+<h2>Nuestros servicios</h2>
 
 <!-- CADERA -->
-<div class="zone fade-in">
-  <img src="https://images.unsplash.com/photo-1594737625785-cb1c8a3b5c54" class="zone-img">
-  <h3>Zona Cadera ✨</h3>
+<div class="zone">
 
-  <div class="grid">
-    <div class="card">Maderoterapia</div>
-    <div class="card">Cavitación</div>
-    <div class="card">Radiofrecuencia</div>
-    <div class="card">Cierre de costillas</div>
-    <div class="card">Mesoterapia</div>
-    <div class="card">Vacumterapia</div>
-  </div>
+<img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e" class="zone-img">
+
+<h3>Zona Cadera ✨</h3>
+
+<div class="grid">
+<div class="card">Maderoterapia</div>
+<div class="card">Cavitación</div>
+<div class="card">Radiofrecuencia</div>
+<div class="card">Cierre de costillas</div>
+<div class="card">Masaje manual</div>
+<div class="card">Mesoterapia</div>
+<div class="card">Vendas frías</div>
+<div class="card">Vacumterapia</div>
+<div class="card">Drenaje linfático</div>
+<div class="card">Gimnasia pasiva</div>
+</div>
+
 </div>
 
 <!-- GLÚTEOS -->
-<div class="zone fade-in">
-  <img src="https://images.unsplash.com/photo-1584467735815-f778f274e296" class="zone-img">
-  <h3>Glúteos 🍑</h3>
-  <p class="phrase">Duraznito perfecto 🍑</p>
+<div class="zone">
 
-  <div class="grid">
-    <div class="card">Copas colombianas</div>
-    <div class="card">Maderoterapia</div>
-    <div class="card">Levantamiento</div>
-    <div class="card">Vacumterapia</div>
-  </div>
+<img src="https://images.unsplash.com/photo-1594737625785-cb7b6c38a39a" class="zone-img">
+
+<h3>Glúteos 🍑</h3>
+<p class="phrase">Duraznito perfecto 🍑</p>
+
+<div class="grid">
+<div class="card">Copas colombianas</div>
+<div class="card">Maderoterapia</div>
+<div class="card">Gimnasia pasiva</div>
+<div class="card">Vacumterapia</div>
+<div class="card">Levantamiento</div>
+<div class="card">Cavitación</div>
+<div class="card">Radiofrecuencia</div>
+<div class="card">Masaje manual</div>
+</div>
+
 </div>
 
 <!-- PIERNAS -->
-<div class="zone fade-in">
-  <img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b" class="zone-img">
-  <h3>Piernas 🦵</h3>
-  <p class="phrase">Adiós piel naranja 🍊</p>
+<div class="zone">
 
-  <div class="grid">
-    <div class="card">Drenaje linfático</div>
-    <div class="card">Radiofrecuencia</div>
-    <div class="card">Cavitación</div>
-    <div class="card">Gimnasia pasiva</div>
-  </div>
+<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519" class="zone-img">
+
+<h3>Piernas 🦵</h3>
+<p class="phrase">Adiós piel naranja 🍊</p>
+
+<div class="grid">
+<div class="card">Drenaje linfático</div>
+<div class="card">Radiofrecuencia</div>
+<div class="card">Cavitación</div>
+<div class="card">Copas colombianas</div>
+<div class="card">Gimnasia pasiva</div>
+<div class="card">Maderoterapia</div>
+<div class="card">Vacumterapia</div>
+</div>
+
 </div>
 
 </section>
 
-<!-- FORMULARIO -->
-<section class="contact fade-in">
-  <h2>Reserva tu cita</h2>
+<!-- PROMO -->
+<section class="promo">
+  <div class="promo-card">
+    <h3>Paquete Bienestar</h3>
+    <p>Masaje relajante + limpieza facial</p>
+    <strong>$899</strong>
+  </div>
+</section>
 
-  <form onsubmit="enviarWhatsApp(event)">
-    <input type="text" id="nombre" placeholder="Nombre" required>
-    <input type="tel" id="telefono" placeholder="Teléfono" required>
+<!-- CONTACTO PRO -->
+<section id="contact">
 
-    <select id="servicio">
-      <option>Selecciona servicio</option>
-      <option>Maderoterapia</option>
-      <option>Drenaje linfático</option>
-      <option>Cavitación</option>
-    </select>
+<h2>Contacto</h2>
 
-    <textarea id="mensaje" placeholder="Fecha y horario"></textarea>
+<div class="contact-grid">
 
-    <button type="submit">Reservar por WhatsApp</button>
-  </form>
+<form id="form">
+
+<input id="nombre" placeholder="Nombre completo" required>
+<input id="telefono" placeholder="Teléfono" required>
+
+<select id="servicio">
+<option>Selecciona servicio</option>
+<option>Maderoterapia</option>
+<option>Cavitación</option>
+<option>Radiofrecuencia</option>
+<option>Drenaje linfático</option>
+</select>
+
+<textarea id="mensaje" placeholder="Fecha y hora"></textarea>
+
+<button class="btn">Enviar por WhatsApp</button>
+
+</form>
+
+<div class="contact-info">
+<p><b>WhatsApp:</b><br>55 7066 2799</p>
+<p><b>Horario:</b><br>Lun - Sáb 9:00 - 19:00</p>
+</div>
+
+</div>
+
 </section>
 
 </main>
 
-<!-- BOTÓN FLOTANTE -->
-<a href="https://wa.me/5215570662799" class="whatsapp-float">💬</a>
+<footer>
+© 2026 Amore Mio Beauty Spa
+</footer>
 
 <script>
-function enviarWhatsApp(e){
-  e.preventDefault();
+document.getElementById("form").addEventListener("submit", function(e){
+e.preventDefault();
 
-  let nombre = document.getElementById("nombre").value;
-  let telefono = document.getElementById("telefono").value;
-  let servicio = document.getElementById("servicio").value;
-  let mensaje = document.getElementById("mensaje").value;
+let nombre = document.getElementById("nombre").value;
+let telefono = document.getElementById("telefono").value;
+let servicio = document.getElementById("servicio").value;
+let mensaje = document.getElementById("mensaje").value;
 
-  let texto = `Hola, soy ${nombre}%0A
-Tel: ${telefono}%0A
-Servicio: ${servicio}%0A
+let texto = `Hola, quiero agendar cita:
+Nombre: ${nombre}
+Teléfono: ${telefono}
+Servicio: ${servicio}
 Mensaje: ${mensaje}`;
 
-  window.open(`https://wa.me/5215570662799?text=${texto}`);
-}
+let url = "https://wa.me/5215570662799?text=" + encodeURIComponent(texto);
+
+window.open(url, "_blank");
+});
 </script>
 
 </body>
