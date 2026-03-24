@@ -1,16 +1,23 @@
 :root{
-  --bg:#ffffff;
-  --accent:#d6cfc7;
-  --accent-2:#f5f2ef;
-  --muted:#6b6b6b;
-  --text:#222;
-  --radius:12px;
-  --maxw:1000px;
-  font-family:Arial;
+  --rosa:#e6bcbc;
+  --rosa-fuerte:#c48a8a;
+  --beige:#f7f2ec;
+  --blanco:#ffffff;
+  --texto:#2b2b2b;
 }
 
-body{margin:0;background:var(--bg);color:var(--text)}
-.container{max-width:var(--maxw);margin:auto;padding:20px}
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:var(--beige);
+  color:var(--texto);
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:20px;
+}
 
 /* NAV */
 .nav{
@@ -20,63 +27,127 @@ body{margin:0;background:var(--bg);color:var(--text)}
 }
 
 .logo-img{
-  width:180px;
-  height:auto;
+  width:160px;
 }
 
+/* BOTÓN */
 .btn-cta{
-  border:1px solid #222;
-  padding:8px 16px;
-  border-radius:20px;
+  border:2px solid var(--rosa-fuerte);
+  padding:8px 18px;
+  border-radius:30px;
+  color:var(--rosa-fuerte);
   text-decoration:none;
-  color:#222;
-  transition:0.3s;
+  transition:.3s;
 }
 
 .btn-cta:hover{
-  background:#222;
-  color:#fff;
+  background:var(--rosa-fuerte);
+  color:white;
 }
 
 /* HERO */
-.hero{text-align:center;padding:60px 0;background:var(--accent-2)}
-.hero h1{font-size:30px}
-.lead{color:var(--muted)}
+.hero{
+  background:linear-gradient(180deg,var(--rosa),var(--beige));
+  text-align:center;
+  padding:80px 0;
+}
 
-.actions{margin-top:15px}
-.btn{background:#222;color:#fff;padding:10px 15px;border-radius:10px;text-decoration:none}
-.btn.ghost{background:transparent;border:1px solid #ccc;color:#222}
+/* ZONAS */
+.zone{
+  margin-top:50px;
+  text-align:center;
+}
 
-/* SERVICES */
-.services{text-align:center}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-bottom:20px}
-.service-card{background:#fff;padding:15px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.05)}
+.zone-img{
+  width:100%;
+  max-height:220px;
+  object-fit:cover;
+  border-radius:14px;
+  margin-bottom:10px;
+}
 
-.zone-title{margin-top:30px;font-size:20px}
-.zone-phrase{color:var(--accent);margin-bottom:10px}
+.phrase{
+  color:var(--rosa-fuerte);
+  font-weight:bold;
+}
 
-/* PROMO */
-.promo{text-align:center;margin:30px 0}
-.promo-card{background:var(--accent-2);padding:20px;border-radius:12px}
+/* CARDS PREMIUM */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:20px;
+}
 
-/* GALERÍA */
-.gallery-grid{display:flex;gap:10px}
-.gallery-grid img{width:33%;border-radius:10px}
+.card{
+  background:var(--blanco);
+  padding:18px;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transition:.3s;
+}
 
-/* TESTIMONIOS */
-.testimonials blockquote{background:#fff;padding:15px;border-left:4px solid var(--accent)}
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
 
-/* CONTACTO */
-.contact-grid{display:grid;grid-template-columns:1fr 250px;gap:20px}
-.form{display:flex;flex-direction:column;gap:10px}
-.form input,.form select,.form textarea{padding:10px;border:1px solid #ddd;border-radius:8px}
+/* FORM */
+.contact form{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:20px;
+}
 
-/* FOOTER */
-.footer{display:flex;justify-content:space-between;padding:20px;color:#777}
+input,select,textarea{
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #ddd;
+}
+
+button{
+  background:var(--rosa-fuerte);
+  color:white;
+  border:none;
+  padding:14px;
+  border-radius:12px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+button:hover{
+  opacity:0.9;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  font-size:24px;
+  padding:12px 16px;
+  border-radius:50%;
+  text-decoration:none;
+}
+
+/* ANIMACIONES */
+.fade-in{
+  opacity:0;
+  transform:translateY(20px);
+  animation:fade 1s ease forwards;
+}
+
+@keyframes fade{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 
 /* RESPONSIVE */
 @media(max-width:800px){
   .grid{grid-template-columns:1fr}
-  .gallery-grid{flex-direction:column}
-  .contact-grid{grid-template-columns:1fr}
 }
