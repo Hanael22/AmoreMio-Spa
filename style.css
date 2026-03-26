@@ -2,18 +2,21 @@
   /* 🎨 COLORES OFICIALES DEL NEGOCIO */
   --rosa-negocio: #825053;
   --crema-negocio: #A29278;
+  --crema-claro: #bdaf95; /* Un tono intermedio para el degradado */
 
   /* APOYO */
   --blanco-fondo: #ffffff;
   --texto: #2b2b2b;
-  --muted: #4a4a4a; /* Un poco más oscuro para mejor lectura sobre el crema */
+  --muted: #4a4a4a;
 }
 
 /* BASE */
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: var(--crema-negocio); /* Fondo unificado */
+  /* DEGRADADO LLAMATIVO: Crea un punto de luz en el centro */
+  background: radial-gradient(circle, var(--crema-claro) 0%, var(--crema-negocio) 100%);
+  background-attachment: fixed; /* Hace que el fondo se quede quieto al hacer scroll */
   color: var(--texto);
   line-height: 1.6;
 }
@@ -34,18 +37,16 @@ body {
   margin-bottom: 30px;
 }
 
-/* LOGO */
 .logo-img {
-  height: 250px;
+  height: 120px;
   background: white;
   padding: 10px;
   border-radius: 5px;
   filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
 }
 
-/* BOTÓN NAV */
 .btn-cta {
-  border: 1px solid var(--rosa-negocio);
+  border: 2px solid var(--rosa-negocio);
   padding: 8px 20px;
   border-radius: 10px;
   text-decoration: none;
@@ -59,42 +60,42 @@ body {
   color: white;
 }
 
-/* HERO - Eliminamos la línea de corte con un degradado sutil */
+/* HERO */
 .hero {
-  background: linear-gradient(
-    180deg, 
-    rgba(255,255,255,0.2) 0%, 
-    var(--crema-negocio) 100%
-  );
-  padding: 40px 0 60px;
+  /* Fondo transparente para que luzca el degradado del body */
+  background: transparent;
+  padding: 60px 0;
   text-align: center;
 }
 
-/* BOTONES */
+/* BOTONES IGUALES 🔥 */
 .btn {
   background: var(--rosa-negocio);
   color: white;
-  padding: 12px 24px;
+  padding: 12px 28px;
   border-radius: 10px;
   text-decoration: none;
   border: none;
   cursor: pointer;
   display: inline-block;
   font-size: 1rem;
+  font-weight: bold;
   transition: .3s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .btn:hover {
   filter: brightness(1.2);
-  transform: scale(1.02);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
-/* BOTÓN SECUNDARIO */
-.actions .btn:last-child {
-  background: transparent;
-  color: var(--rosa-negocio);
-  border: 1px solid var(--rosa-negocio);
-  margin-left: 10px;
+/* Quitamos el estilo diferente del último botón para que sean iguales */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Espacio entre botones */
+  margin-top: 25px;
 }
 
 /* ZONAS */
@@ -102,122 +103,27 @@ body {
   margin-top: 40px;
   padding: 40px 25px;
   border-radius: 30px;
-  background: var(--blanco-fondo);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  background: rgba(255, 255, 255, 0.95); /* Un toque de transparencia */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-/* TITULOS */
-h1, h2, h3 {
-  color: var(--rosa-negocio);
-  text-align: center;
-  margin-bottom: 20px;
-}
+/* El resto del CSS (h1, grid, card, promo, form, footer) se mantiene igual que la versión anterior */
 
-/* IMAGENES */
-.zone-img {
-  width: 100%;
-  max-width: 450px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 20px;
-  display: block;
-  margin: 0 auto 20px;
-}
+h1, h2, h3 { color: var(--rosa-negocio); text-align: center; margin-bottom: 20px; }
+.zone-img { width: 100%; max-width: 450px; height: 250px; object-fit: cover; border-radius: 20px; display: block; margin: 0 auto 20px; }
+.phrase { color: var(--rosa-negocio); font-weight: bold; text-align: center; margin-bottom: 20px; font-style: italic; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
+.card { background: #fff; padding: 15px; border-radius: 12px; text-align: center; border: 1px solid #eee; transition: all .3s ease; }
+.card:hover { transform: translateY(-5px); border-color: var(--rosa-negocio); }
+.promo { display: flex; justify-content: center; margin: 60px 0; }
+.promo-card { background: var(--rosa-negocio); color: white; padding: 30px; border-radius: 20px; text-align: center; width: 100%; max-width: 400px; }
+.contact-grid { display: grid; grid-template-columns: 1fr 300px; gap: 30px; }
+.form { display: grid; gap: 15px; }
+.form input, .form select, .form textarea { padding: 15px; border-radius: 10px; border: 1px solid #ccc; width: 100%; box-sizing: border-box; }
+.contact-info { background: rgba(255,255,255,0.7); padding: 25px; border-radius: 20px; }
+footer { padding: 40px 20px; text-align: center; color: white; background: var(--rosa-negocio); margin-top: 60px; }
 
-/* FRASE */
-.phrase {
-  color: var(--rosa-negocio);
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
-  font-style: italic;
-}
-
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
-}
-
-/* CARDS */
-.card {
-  background: #fdfbfb;
-  padding: 15px;
-  border-radius: 12px;
-  text-align: center;
-  border: 1px solid #eee;
-  transition: all .3s ease;
-  font-size: 0.95rem;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  border-color: var(--rosa-negocio);
-  box-shadow: 0 5px 15px rgba(130, 80, 83, 0.1);
-}
-
-/* PROMO */
-.promo {
-  display: flex;
-  justify-content: center;
-  margin: 60px 0;
-}
-
-.promo-card {
-  background: var(--rosa-negocio);
-  color: white;
-  padding: 30px;
-  border-radius: 20px;
-  text-align: center;
-  max-width: 400px;
-  width: 100%;
-}
-
-/* CONTACTO */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 30px;
-}
-
-.form {
-  display: grid;
-  gap: 15px;
-}
-
-.form input, .form select, .form textarea {
-  padding: 15px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* INFO */
-.contact-info {
-  background: rgba(255,255,255,0.5);
-  padding: 25px;
-  border-radius: 20px;
-  border: 1px solid rgba(0,0,0,0.05);
-}
-
-/* FOOTER */
-footer {
-  padding: 40px 20px;
-  text-align: center;
-  color: white;
-  background: var(--rosa-negocio);
-  margin-top: 60px;
-}
-
-/* RESPONSIVE */
 @media(max-width:800px){
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-  .actions .btn:last-child {
-    margin-left: 0;
-    margin-top: 10px;
-  }
+  .contact-grid { grid-template-columns: 1fr; }
+  .actions { flex-direction: column; align-items: center; }
 }
