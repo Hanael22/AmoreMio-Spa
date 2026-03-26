@@ -2,7 +2,8 @@
   /* 🎨 COLORES OFICIALES DEL NEGOCIO */
   --rosa-negocio: #825053;
   --crema-negocio: #A29278;
-  --crema-claro: #bdaf95; /* Un tono intermedio para el degradado */
+  --crema-claro: #bdaf95;
+  --crema-oscuro: #8e7f65; /* Color extra para sombras de fondo */
 
   /* APOYO */
   --blanco-fondo: #ffffff;
@@ -14,9 +15,15 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
-  /* DEGRADADO LLAMATIVO: Crea un punto de luz en el centro */
-  background: radial-gradient(circle, var(--crema-claro) 0%, var(--crema-negocio) 100%);
-  background-attachment: fixed; /* Hace que el fondo se quede quieto al hacer scroll */
+  
+  /* FONDO DINÁMICO: Mezcla de luces para evitar que sea liso */
+  background-color: var(--crema-negocio);
+  background-image: 
+    radial-gradient(at 0% 0%, var(--crema-claro) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, var(--crema-oscuro) 0px, transparent 50%),
+    radial-gradient(circle, var(--crema-claro) 0%, var(--crema-negocio) 100%);
+    
+  background-attachment: fixed;
   color: var(--texto);
   line-height: 1.6;
 }
@@ -41,13 +48,13 @@ body {
   height: 120px;
   background: white;
   padding: 10px;
-  border-radius: 5px;
-  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
+  border-radius: 8px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
 }
 
 .btn-cta {
   border: 2px solid var(--rosa-negocio);
-  padding: 8px 20px;
+  padding: 8px 25px;
   border-radius: 10px;
   text-decoration: none;
   color: var(--rosa-negocio);
@@ -62,7 +69,6 @@ body {
 
 /* HERO */
 .hero {
-  /* Fondo transparente para que luzca el degradado del body */
   background: transparent;
   padding: 60px 0;
   text-align: center;
@@ -80,50 +86,145 @@ body {
   display: inline-block;
   font-size: 1rem;
   font-weight: bold;
-  transition: .3s;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: .3s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
 }
 
 .btn:hover {
-  filter: brightness(1.2);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  filter: brightness(1.15);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
-/* Quitamos el estilo diferente del último botón para que sean iguales */
+/* Contenedor de botones del Hero */
 .actions {
   display: flex;
   justify-content: center;
-  gap: 15px; /* Espacio entre botones */
+  gap: 15px;
   margin-top: 25px;
 }
 
 /* ZONAS */
 .zone {
-  margin-top: 40px;
-  padding: 40px 25px;
-  border-radius: 30px;
-  background: rgba(255, 255, 255, 0.95); /* Un toque de transparencia */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  margin-top: 50px;
+  padding: 45px 30px;
+  border-radius: 35px;
+  background: rgba(255, 255, 255, 0.96); /* Casi opaco para mejor lectura */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
 }
 
-/* El resto del CSS (h1, grid, card, promo, form, footer) se mantiene igual que la versión anterior */
+/* TITULOS */
+h1, h2, h3 { 
+  color: var(--rosa-negocio); 
+  text-align: center; 
+  margin-bottom: 25px; 
+}
 
-h1, h2, h3 { color: var(--rosa-negocio); text-align: center; margin-bottom: 20px; }
-.zone-img { width: 100%; max-width: 450px; height: 250px; object-fit: cover; border-radius: 20px; display: block; margin: 0 auto 20px; }
-.phrase { color: var(--rosa-negocio); font-weight: bold; text-align: center; margin-bottom: 20px; font-style: italic; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
-.card { background: #fff; padding: 15px; border-radius: 12px; text-align: center; border: 1px solid #eee; transition: all .3s ease; }
-.card:hover { transform: translateY(-5px); border-color: var(--rosa-negocio); }
-.promo { display: flex; justify-content: center; margin: 60px 0; }
-.promo-card { background: var(--rosa-negocio); color: white; padding: 30px; border-radius: 20px; text-align: center; width: 100%; max-width: 400px; }
-.contact-grid { display: grid; grid-template-columns: 1fr 300px; gap: 30px; }
-.form { display: grid; gap: 15px; }
-.form input, .form select, .form textarea { padding: 15px; border-radius: 10px; border: 1px solid #ccc; width: 100%; box-sizing: border-box; }
-.contact-info { background: rgba(255,255,255,0.7); padding: 25px; border-radius: 20px; }
-footer { padding: 40px 20px; text-align: center; color: white; background: var(--rosa-negocio); margin-top: 60px; }
+/* IMAGENES */
+.zone-img { 
+  width: 100%; 
+  max-width: 450px; 
+  height: 250px; 
+  object-fit: cover; 
+  border-radius: 20px; 
+  display: block; 
+  margin: 0 auto 20px; 
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
 
+/* FRASE */
+.phrase { 
+  color: var(--rosa-negocio); 
+  font-weight: bold; 
+  text-align: center; 
+  margin-bottom: 25px; 
+  font-style: italic; 
+}
+
+/* GRID */
+.grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+  gap: 15px; 
+}
+
+/* CARDS */
+.card { 
+  background: #fff; 
+  padding: 18px; 
+  border-radius: 14px; 
+  text-align: center; 
+  border: 1px solid #eee; 
+  transition: all .3s ease; 
+  font-weight: 500;
+}
+
+.card:hover { 
+  transform: translateY(-5px); 
+  border-color: var(--rosa-negocio); 
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* PROMO */
+.promo { 
+  display: flex; 
+  justify-content: center; 
+  margin: 60px 0; 
+}
+
+.promo-card { 
+  background: var(--rosa-negocio); 
+  color: white; 
+  padding: 35px; 
+  border-radius: 25px; 
+  text-align: center; 
+  width: 100%; 
+  max-width: 450px; 
+  box-shadow: 0 10px 30px rgba(130, 80, 83, 0.3);
+}
+
+/* CONTACTO */
+.contact-grid { 
+  display: grid; 
+  grid-template-columns: 1fr 300px; 
+  gap: 30px; 
+}
+
+.form { 
+  display: grid; 
+  gap: 15px; 
+}
+
+.form input, .form select, .form textarea { 
+  padding: 15px; 
+  border-radius: 12px; 
+  border: 1px solid #ddd; 
+  width: 100%; 
+  box-sizing: border-box; 
+  font-family: inherit;
+}
+
+/* INFO */
+.contact-info { 
+  background: rgba(255,255,255,0.8); 
+  padding: 30px; 
+  border-radius: 20px; 
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* FOOTER */
+footer { 
+  padding: 50px 20px; 
+  text-align: center; 
+  color: white; 
+  background: var(--rosa-negocio); 
+  margin-top: 80px; 
+}
+
+/* RESPONSIVE */
 @media(max-width:800px){
   .contact-grid { grid-template-columns: 1fr; }
   .actions { flex-direction: column; align-items: center; }
+  .btn { width: 100%; max-width: 300px; }
 }
