@@ -1,19 +1,24 @@
-:root{
-  --rosa:#d88c9a;
-  --rosa-suave:#f3dede;
-  --beige:#f5ebe0;
-  --blanco:#ffffff;
-  --texto:#2b2b2b;
-  --muted:#777;
-}
+:root {
+ 
+  --rosa-negocio: #c7808c; /* Un rosa antiguo saturado */
 
+ 
+  --crema-suave-negocio: #faf5f0; /* Un blanco crema muy claro y cálido */
+
+ 
+  --blanco-fondo: #ffffff; /* O puedes usar var(--crema-suave-negocio) */
+
+ 
+  --texto: #2b2b2b; /* Negro suave para texto principal */
+  --muted: #777;    /* Gris para texto secundario */
+}
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: var(--blanco); /* Cambiamos beige por blanco para que el logo se funda */
+  /* Usamos el nuevo crema suave para el fondo, como en la pared */
+  background: var(--crema-suave-negocio);
   color: var(--texto);
 }
-
 /* CONTENEDOR */
 .container{
   max-width:1100px;
@@ -38,30 +43,29 @@ body {
 
 /* BOTÓN NAV */
 .btn-cta{
-  border:1px solid var(--rosa);
+  border:1px solid var(--rosa-negocio);
   padding:8px 16px;
   border-radius:10px;
   text-decoration:none;
-  color:var(--rosa);
+  color:var(--rosa-negocio);
   transition:.3s;
 }
 
 .btn-cta:hover{
-  background:var(--rosa);
+  background:var(--rosa-negocio);
   color:white;
 }
 
 /* HERO */
 .hero {
-  /* Degradado más suave y elegante */
-  background: linear-gradient(180deg, var(--rosa-suave) 0%, var(--blanco) 100%);
-  padding: 40px 0 80px; /* Más espacio abajo para que respire */
+  background: linear-gradient(180deg, var(--blanco-fondo) 0%, var(--crema-suave-negocio) 100%);
+  padding: 40px 0 80px;
   text-align: center;
 }
 
 /* BOTONES */
 .btn{
-  background:var(--rosa);
+  background:var(--rosa-negocio);
   color:white;
   padding:10px 18px;
   border-radius:10px;
@@ -75,7 +79,7 @@ body {
   margin-top: 60px;
   padding: 40px 20px;
   border-radius: 30px;
-  background: var(--blanco); /* Fondo limpio */
+  background: var(--blanco-fondo  ); /* Fondo limpio */
 }
 
 main.container {
@@ -84,7 +88,7 @@ main.container {
 
 
 h1, h2, h3 {
-  color: var(--rosa);
+  color: var(--rosa-negocio);
   letter-spacing: -0.5px;
 }
 
@@ -101,7 +105,7 @@ h1, h2, h3 {
 
 /* FRASE */
 .phrase{
-  color:var(--rosa);
+  color:var(--rosa-negocio);
   font-weight:bold;
 }
 
@@ -115,7 +119,7 @@ h1, h2, h3 {
 
 /* 🔥 CARDS (AHORA SÍ FUNCIONAN) */
 .card{
-  background:var(--blanco);
+  background:var(--blanco-fondo);
   padding:18px;
   border-radius:14px;
   text-align:center;
@@ -139,7 +143,7 @@ h1, h2, h3 {
 }
 
 .promo-card{
-  background:var(--rosa);
+  background:var(--rosa-negocio);
   color:white;
   padding:25px;
   border-radius:15px;
