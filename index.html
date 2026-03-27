@@ -9,8 +9,7 @@
 </head>
 <body>
 
-    <div class="butterfly b-top">🦋</div>
-    <div class="butterfly b-bottom">🦋</div>
+    
 
     <nav class="navbar">
         <div class="nav-content">
@@ -93,10 +92,66 @@
         </div>
 
         <div id="view-servicios" class="view">
-            <div class="container" style="padding: 100px 20px; text-align: center;">
-                <h2>Nuestros Servicios</h2>
-                <p>Aquí verás todos nuestros tratamientos de belleza.</p>
+            <section class="servicios-section">
+    <div class="container-servicios">
+        <h2 class="section-heading">Nuestras Experiencias</h2>
+        <p class="servicios-intro">Resultados visibles desde la primera sesión con aparatología de vanguardia.</p>
+
+        <div class="servicios-grid">
+            <div class="servicio-card" onclick="toggleDetalle('cintura')">
+                <div class="servicio-img-wrapper">
+                    <div class="img-placeholder-serv">IMAGEN CINTURA</div>
+                    <div class="badge-precio">$400 / Sesión</div>
+                </div>
+                <div class="servicio-info">
+                    <h3>Cintura de Barbie</h3>
+                    <p class="frase-servicio">Esculpe tu silueta con nuestra técnica insignia.</p>
+                    <div class="promo-mini">10 sesiones por $2,500</div>
+                    <div class="inauguracion-tag">🎁 Inauguración: 10 ses. x $2,000 + Regalo</div>
+                </div>
             </div>
+
+            <div class="servicio-card" onclick="toggleDetalle('gluteos')">
+                <div class="servicio-img-wrapper">
+                    <div class="img-placeholder-serv">IMAGEN GLÚTEOS</div>
+                    <div class="badge-precio">$500 / Sesión</div>
+                </div>
+                <div class="servicio-info">
+                    <h3>Glúteos Perfectos</h3>
+                    <p class="frase-servicio">Duraznito perfecto: firmeza y volumen natural.</p>
+                    <div class="promo-mini">10 sesiones por $2,500</div>
+                    <div class="inauguracion-tag">🎁 Inauguración: 10 ses. x $2,000 + Regalo</div>
+                </div>
+            </div>
+
+            <div class="servicio-card" onclick="toggleDetalle('piernas')">
+                <div class="servicio-img-wrapper">
+                    <div class="img-placeholder-serv">IMAGEN PIERNAS</div>
+                    <div class="badge-precio">$400 / Sesión</div>
+                </div>
+                <div class="servicio-info">
+                    <h3>Piernas de Seda</h3>
+                    <p class="frase-servicio">Adiós piel naranja 🍊. Piernas suaves y tonificadas.</p>
+                    <div class="promo-mini">10 sesiones por $2,500</div>
+                    <div class="inauguracion-tag">🎁 Inauguración: 10 ses. x $2,000 + Regalo</div>
+                </div>
+            </div>
+
+            <div class="servicio-card no-list">
+                <div class="servicio-img-wrapper">
+                    <div class="img-placeholder-serv">IMAGEN BRAZOS</div>
+                    <div class="badge-precio">$400 / Sesión</div>
+                </div>
+                <div class="servicio-info">
+                    <h3>Espalda y Brazos</h3>
+                    <p class="frase-servicio">Define y reafirma. Ideal para lucir cualquier vestido.</p>
+                    <div class="promo-mini">10 sesiones por $2,500</div>
+                    <div class="inauguracion-tag">🎁 Inauguración: 10 ses. x $2,000 + Regalo</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
         </div>
 
         <div id="view-contacto" class="view">
