@@ -5,178 +5,244 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 
 <title>Amore Mio Beauty Spa & Make Up</title>
-<link rel="stylesheet" href="style.css" />
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<header class="hero">
-  <nav class="nav container">
-    <img src="logo.jpg" class="logo-img">
-    <a class="btn-cta" href="https://wa.me/5215579696678">Agendar Cita</a>
-  </nav>
-
-  <div class="container">
-    <h1>Tu espacio para reconectar contigo</h1>
-    <p>Relaja tu cuerpo, transforma tu figura y vive tu mejor versión.</p>
+<!-- NAV -->
+<div class="navbar">
+  <div class="logo">Amore Mio</div>
+  <div class="menu">
+    <a href="#">Home</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#menu-servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
   </div>
-</header>
+  <a class="btn-nav" href="#">Reservar</a>
+</div>
 
-<main class="container">
-
-<!-- INTRO -->
-<section class="intro">
-  <h2>Sí, llegaste al lugar correcto</h2>
-  <p>En Amore Mio, cada sesión está diseñada para hacerte sentir increíble por dentro y por fuera.</p>
+<!-- HERO -->
+<section class="hero">
+  <h1>Tu belleza, elevada al siguiente nivel</h1>
+  <p>Experiencias únicas para cuerpo y mente</p>
+  <a href="#menu-servicios" class="btn">Explorar servicios</a>
 </section>
 
-<!-- SERVICIOS -->
-<section>
+<!-- NOSOTROS -->
+<section class="section" id="nosotros">
+<h2>Nosotros</h2>
+<p style="text-align:center; max-width:700px; margin:auto;">
+Somos un espacio donde te sentirás en tu propio refugio. Creamos experiencias personalizadas enfocadas en tu bienestar físico y emocional.
+</p>
+</section>
 
-<h2>Experiencias corporales</h2>
+<!-- MENU SERVICIOS -->
+<section class="section" id="menu-servicios">
+<h2>Servicios</h2>
+
+<div class="cards">
+
+<div class="card" onclick="showSection('general')">
+<div class="img-placeholder"></div>
+<div class="card-body">
+<h3>Servicios</h3>
+<p>Todos nuestros tratamientos</p>
+</div>
+</div>
+
+<div class="card" onclick="showSection('cintura')">
+<div class="img-placeholder"></div>
+<div class="card-body">
+<h3>Cintura</h3>
+</div>
+</div>
+
+<div class="card" onclick="showSection('gluteos')">
+<div class="img-placeholder"></div>
+<div class="card-body">
+<h3>Glúteos</h3>
+</div>
+</div>
+
+<div class="card" onclick="showSection('piernas')">
+<div class="img-placeholder"></div>
+<div class="card-body">
+<h3>Piernas</h3>
+</div>
+</div>
+
+<div class="card" onclick="showSection('espalda')">
+<div class="img-placeholder"></div>
+<div class="card-body">
+<h3>Espalda y Brazos</h3>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- GENERAL -->
+<section class="section hidden" id="general">
+<h2>Servicios</h2>
+
+<div class="services-list">
+<div class="service">Masaje reductivo</div>
+<div class="service">Masaje relajante</div>
+<div class="service">Masaje descontracturante</div>
+<div class="service">Drenaje linfático</div>
+<div class="service">Maderoterapia</div>
+<div class="service">Levantamiento de glúteos</div>
+<div class="service">Anticelulitis</div>
+<div class="service">Limpiezas faciales</div>
+<div class="service">Cavitación</div>
+<div class="service">Radiofrecuencia</div>
+<div class="service">Vacumterapia</div>
+<div class="service">Gimnasia pasiva</div>
+<div class="service">Copas colombianas</div>
+<div class="service">Maquillaje profesional</div>
+</div>
+
+<span class="back" onclick="goBack()">← Volver</span>
+</section>
 
 <!-- CINTURA -->
-<div class="zone">
+<section class="section hidden" id="cintura">
+<h2>Cintura de Barbie</h2>
 
-<div class="img-placeholder">AQUÍ PONES IMAGEN CINTURA</div>
-
-<h3>Cintura de Barbie ✨</h3>
-
-<p class="price">$400 / sesión (1 hora)</p>
-
-<div class="grid">
-<div class="card">Moldea tu figura</div>
-<div class="card">Reduce grasa localizada</div>
-<div class="card">Mejora tu silueta</div>
+<div class="services-list">
+<div class="service">Maderoterapia</div>
+<div class="service">Cavitación</div>
+<div class="service">Radiofrecuencia</div>
+<div class="service">Cierre de costillas</div>
+<div class="service">Masaje manual</div>
+<div class="service">Mesoterapia</div>
+<div class="service">Vendas frías</div>
+<div class="service">Vacumterapia</div>
+<div class="service">Drenaje linfático</div>
+<div class="service">Gimnasia pasiva</div>
 </div>
 
-<div class="promo-box">
-<p>🔥 10 sesiones por $2,500</p>
-<p>💎 Promoción inauguración: 10 sesiones por $2,000 + regalo</p>
+<div class="price">$400 / sesión</div>
+
+<div class="promo">
+10 sesiones $2,500<br>
+Promoción inauguración $2,000 🎁
 </div>
 
-</div>
-
-<!-- ESPALDA -->
-<div class="zone">
-
-<div class="img-placeholder">AQUÍ PONES IMAGEN ESPALDA</div>
-
-<h3>Espalda y Brazos ✨</h3>
-
-<p class="price">$400 / sesión (1 hora)</p>
-
-<div class="grid">
-<div class="card">Tonifica tu cuerpo</div>
-<div class="card">Elimina tensión</div>
-<div class="card">Define brazos</div>
-</div>
-
-<div class="promo-box">
-<p>🔥 10 sesiones por $2,500</p>
-<p>💎 Promoción inauguración: 10 sesiones por $2,000 + regalo</p>
-</div>
-
-</div>
-
-<!-- GLUTEOS -->
-<div class="zone">
-
-<div class="img-placeholder">AQUÍ PONES IMAGEN GLÚTEOS</div>
-
-<h3>Glúteos 🍑</h3>
-
-<p class="price">$500 / sesión (1 hora)</p>
-
-<div class="grid">
-<div class="card">Levantamiento natural</div>
-<div class="card">Mayor firmeza</div>
-<div class="card">Forma perfecta</div>
-</div>
-
-<div class="promo-box">
-<p>🔥 10 sesiones por $2,500</p>
-<p>💎 Promoción inauguración: 10 sesiones por $2,000 + regalo</p>
-</div>
-
-</div>
-
+<span class="back" onclick="goBack()">← Volver</span>
 </section>
 
-<!-- MAQUILLAJE -->
-<section>
+<!-- GLUTEOS -->
+<section class="section hidden" id="gluteos">
+<h2>Glúteos</h2>
 
-<h2>Maquillaje profesional</h2>
-
-<p style="text-align:center;">Realzamos tu belleza para cualquier ocasión especial.</p>
-
-<div class="makeup-gallery">
-<div class="img-placeholder">FOTO 1</div>
-<div class="img-placeholder">FOTO 2</div>
-<div class="img-placeholder">FOTO 3</div>
-<div class="img-placeholder">FOTO 4</div>
-<div class="img-placeholder">FOTO 5</div>
+<div class="services-list">
+<div class="service">Copas colombianas</div>
+<div class="service">Maderoterapia</div>
+<div class="service">Gimnasia pasiva</div>
+<div class="service">Vacumterapia</div>
+<div class="service">Levantamiento</div>
+<div class="service">Cavitación</div>
+<div class="service">Radiofrecuencia</div>
+<div class="service">Masaje manual</div>
 </div>
 
+<div class="price">$500 / sesión</div>
+
+<div class="promo">
+10 sesiones $2,500<br>
+Promoción inauguración $2,000 🎁
+</div>
+
+<span class="back" onclick="goBack()">← Volver</span>
+</section>
+
+<!-- PIERNAS -->
+<section class="section hidden" id="piernas">
+<h2>Piernas</h2>
+
+<div class="services-list">
+<div class="service">Drenaje linfático</div>
+<div class="service">Radiofrecuencia</div>
+<div class="service">Cavitación</div>
+<div class="service">Copas colombianas</div>
+<div class="service">Gimnasia pasiva</div>
+<div class="service">Maderoterapia</div>
+<div class="service">Vacumterapia</div>
+</div>
+
+<div class="price">$400 / sesión</div>
+
+<div class="promo">
+10 sesiones $2,500<br>
+Promoción inauguración $2,000 🎁
+</div>
+
+<span class="back" onclick="goBack()">← Volver</span>
+</section>
+
+<!-- ESPALDA -->
+<section class="section hidden" id="espalda">
+<h2>Espalda y Brazos</h2>
+
+<p style="text-align:center;">Tratamiento enfocado en tonificar y relajar.</p>
+
+<div class="price">$400 / sesión</div>
+
+<div class="promo">
+10 sesiones $2,500<br>
+Promoción inauguración $2,000 🎁
+</div>
+
+<span class="back" onclick="goBack()">← Volver</span>
 </section>
 
 <!-- CONTACTO -->
-<section id="contact">
+<section class="section" id="contacto">
+<h2>Contacto</h2>
 
-<h2>Agenda tu cita</h2>
-
-<div class="contact-grid">
-
-<form class="form" id="form">
-<input id="nombre" type="text" placeholder="Nombre completo" required>
-<input id="telefono" type="tel" placeholder="Teléfono" required>
-
-<select id="servicio">
-<option>Cintura de Barbie</option>
-<option>Espalda y brazos</option>
-<option>Glúteos</option>
-<option>Maquillaje</option>
-</select>
-
-<textarea id="mensaje" placeholder="Fecha deseada"></textarea>
-
-<button class="btn">Enviar por WhatsApp</button>
+<div class="contact">
+<form>
+<input placeholder="Nombre">
+<input placeholder="Teléfono">
+<textarea placeholder="Mensaje"></textarea>
+<button class="btn">Enviar</button>
 </form>
 
-<div class="contact-info">
-<p><b>WhatsApp:</b><br>55 94 29 28 11</p>
-<p><b>Horario:</b><br>Lun - Sáb 9:00 - 19:00</p>
+<div>
+<p><b>WhatsApp:</b> 55 94 29 28 11</p>
+<p><b>Horario:</b> Lun - Sáb 9:00 - 19:00</p>
 </div>
 
 </div>
-
 </section>
-
-</main>
 
 <footer>
 © 2026 Amore Mio Beauty Spa
 </footer>
 
 <script>
-document.getElementById("form").addEventListener("submit", function(e){
-e.preventDefault();
+function showSection(id){
+  document.querySelectorAll(".section").forEach(sec=>{
+    if(sec.id !== "menu-servicios" && sec.id !== "nosotros" && sec.id !== "contacto"){
+      sec.classList.add("hidden");
+    }
+  });
+  document.getElementById(id).classList.remove("hidden");
+  window.scrollTo(0,0);
+}
 
-let nombre = document.getElementById("nombre").value;
-let telefono = document.getElementById("telefono").value;
-let servicio = document.getElementById("servicio").value;
-let mensaje = document.getElementById("mensaje").value;
-
-let texto = `Hola, quiero agendar cita:
-Nombre: ${nombre}
-Teléfono: ${telefono}
-Servicio: ${servicio}
-Mensaje: ${mensaje}`;
-
-let url = "https://wa.me/5215579696678?text=" + encodeURIComponent(texto);
-
-window.open(url, "_blank");
-});
+function goBack(){
+  document.querySelectorAll(".section").forEach(sec=>{
+    if(sec.id !== "menu-servicios" && sec.id !== "nosotros" && sec.id !== "contacto"){
+      sec.classList.add("hidden");
+    }
+  });
+  window.scrollTo(0,500);
+}
 </script>
 
 </body>
