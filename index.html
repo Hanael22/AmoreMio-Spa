@@ -3,8 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-
-<title>Amore Mio Beauty Spa & Make Up</title>
+<title>Amore Mio Beauty Spa</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -12,207 +11,128 @@
 
 <body>
 
+<!-- 🦋 DECORACIONES -->
+<div class="butterfly b1"></div>
+<div class="butterfly b2"></div>
+<div class="butterfly b3"></div>
+
 <!-- NAV -->
-<div class="navbar">
+<header class="nav">
   <div class="logo">Amore Mio</div>
-  <div class="menu">
-    <a href="#">Home</a>
+
+  <nav>
+    <a href="#home">Inicio</a>
     <a href="#nosotros">Nosotros</a>
-    <a href="#menu-servicios">Servicios</a>
+    <a href="#menu">Servicios</a>
     <a href="#contacto">Contacto</a>
-  </div>
-  <a class="btn-nav" href="#">Reservar</a>
-</div>
+    <a href="#privacidad">Privacidad</a>
+  </nav>
+
+  <a href="#" class="btn">Reservar</a>
+</header>
 
 <!-- HERO -->
-<section class="hero">
-  <h1>Tu belleza, elevada al siguiente nivel</h1>
-  <p>Experiencias únicas para cuerpo y mente</p>
-  <a href="#menu-servicios" class="btn">Explorar servicios</a>
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1>Elegancia, belleza y armonía</h1>
+    <p>Descubre tratamientos diseñados para resaltar tu mejor versión</p>
+    <a href="#menu" class="btn">Ver servicios</a>
+  </div>
 </section>
 
 <!-- NOSOTROS -->
-<section class="section" id="nosotros">
+<section id="nosotros" class="section">
 <h2>Nosotros</h2>
-<p style="text-align:center; max-width:700px; margin:auto;">
-Somos un espacio donde te sentirás en tu propio refugio. Creamos experiencias personalizadas enfocadas en tu bienestar físico y emocional.
+
+<div class="nosotros-grid">
+
+<div>
+<p>
+En Amore Mio Beauty Spa hemos creado un espacio íntimo, elegante y relajante pensado para que cada persona se sienta especial.
 </p>
-</section>
 
-<!-- MENU SERVICIOS -->
-<section class="section" id="menu-servicios">
-<h2>Servicios</h2>
+<p>
+Nos enfocamos en tratamientos personalizados que ayudan a mejorar tu bienestar físico y emocional.
+Cada servicio está diseñado para ofrecer resultados visibles mientras disfrutas una experiencia única.
+</p>
 
-<div class="cards">
-
-<div class="card" onclick="showSection('general')">
-<div class="img-placeholder"></div>
-<div class="card-body">
-<h3>Servicios</h3>
-<p>Todos nuestros tratamientos</p>
-</div>
+<p>
+Nuestro objetivo es brindarte un momento de desconexión total, donde tu cuerpo, mente y belleza se alineen en perfecta armonía.
+</p>
 </div>
 
-<div class="card" onclick="showSection('cintura')">
-<div class="img-placeholder"></div>
-<div class="card-body">
-<h3>Cintura</h3>
-</div>
-</div>
-
-<div class="card" onclick="showSection('gluteos')">
-<div class="img-placeholder"></div>
-<div class="card-body">
-<h3>Glúteos</h3>
-</div>
-</div>
-
-<div class="card" onclick="showSection('piernas')">
-<div class="img-placeholder"></div>
-<div class="card-body">
-<h3>Piernas</h3>
-</div>
-</div>
-
-<div class="card" onclick="showSection('espalda')">
-<div class="img-placeholder"></div>
-<div class="card-body">
-<h3>Espalda y Brazos</h3>
-</div>
-</div>
+<div class="img-placeholder grande"></div>
 
 </div>
 </section>
+
+<!-- MENU PRINCIPAL -->
+<section id="menu" class="section">
+<h2>Explora nuestros servicios</h2>
+
+<div class="grid">
 
 <!-- GENERAL -->
-<section class="section hidden" id="general">
-<h2>Servicios</h2>
-
-<div class="services-list">
-<div class="service">Masaje reductivo</div>
-<div class="service">Masaje relajante</div>
-<div class="service">Masaje descontracturante</div>
-<div class="service">Drenaje linfático</div>
-<div class="service">Maderoterapia</div>
-<div class="service">Levantamiento de glúteos</div>
-<div class="service">Anticelulitis</div>
-<div class="service">Limpiezas faciales</div>
-<div class="service">Cavitación</div>
-<div class="service">Radiofrecuencia</div>
-<div class="service">Vacumterapia</div>
-<div class="service">Gimnasia pasiva</div>
-<div class="service">Copas colombianas</div>
-<div class="service">Maquillaje profesional</div>
-</div>
-
-<span class="back" onclick="goBack()">← Volver</span>
-</section>
+<a href="servicios.html" class="card">
+<div class="img-placeholder"></div>
+<h3>Servicios</h3>
+<p>Descubre todos nuestros tratamientos</p>
+</a>
 
 <!-- CINTURA -->
-<section class="section hidden" id="cintura">
-<h2>Cintura de Barbie</h2>
-
-<div class="services-list">
-<div class="service">Maderoterapia</div>
-<div class="service">Cavitación</div>
-<div class="service">Radiofrecuencia</div>
-<div class="service">Cierre de costillas</div>
-<div class="service">Masaje manual</div>
-<div class="service">Mesoterapia</div>
-<div class="service">Vendas frías</div>
-<div class="service">Vacumterapia</div>
-<div class="service">Drenaje linfático</div>
-<div class="service">Gimnasia pasiva</div>
-</div>
-
-<div class="price">$400 / sesión</div>
-
-<div class="promo">
-10 sesiones $2,500<br>
-Promoción inauguración $2,000 🎁
-</div>
-
-<span class="back" onclick="goBack()">← Volver</span>
-</section>
+<a href="cintura.html" class="card">
+<div class="img-placeholder"></div>
+<h3>Cintura</h3>
+<p>Moldea tu figura con precisión</p>
+</a>
 
 <!-- GLUTEOS -->
-<section class="section hidden" id="gluteos">
-<h2>Glúteos</h2>
-
-<div class="services-list">
-<div class="service">Copas colombianas</div>
-<div class="service">Maderoterapia</div>
-<div class="service">Gimnasia pasiva</div>
-<div class="service">Vacumterapia</div>
-<div class="service">Levantamiento</div>
-<div class="service">Cavitación</div>
-<div class="service">Radiofrecuencia</div>
-<div class="service">Masaje manual</div>
-</div>
-
-<div class="price">$500 / sesión</div>
-
-<div class="promo">
-10 sesiones $2,500<br>
-Promoción inauguración $2,000 🎁
-</div>
-
-<span class="back" onclick="goBack()">← Volver</span>
-</section>
+<a href="gluteos.html" class="card">
+<div class="img-placeholder"></div>
+<h3>Glúteos</h3>
+<p>Duraznito perfecto 🍑</p>
+</a>
 
 <!-- PIERNAS -->
-<section class="section hidden" id="piernas">
-<h2>Piernas</h2>
-
-<div class="services-list">
-<div class="service">Drenaje linfático</div>
-<div class="service">Radiofrecuencia</div>
-<div class="service">Cavitación</div>
-<div class="service">Copas colombianas</div>
-<div class="service">Gimnasia pasiva</div>
-<div class="service">Maderoterapia</div>
-<div class="service">Vacumterapia</div>
-</div>
-
-<div class="price">$400 / sesión</div>
-
-<div class="promo">
-10 sesiones $2,500<br>
-Promoción inauguración $2,000 🎁
-</div>
-
-<span class="back" onclick="goBack()">← Volver</span>
-</section>
+<a href="piernas.html" class="card">
+<div class="img-placeholder"></div>
+<h3>Piernas</h3>
+<p>Adiós a la piel de naranja</p>
+</a>
 
 <!-- ESPALDA -->
-<section class="section hidden" id="espalda">
-<h2>Espalda y Brazos</h2>
+<a href="espalda.html" class="card">
+<div class="img-placeholder"></div>
+<h3>Espalda y brazos</h3>
+<p>Define y relaja tu cuerpo</p>
+</a>
 
-<p style="text-align:center;">Tratamiento enfocado en tonificar y relajar.</p>
-
-<div class="price">$400 / sesión</div>
-
-<div class="promo">
-10 sesiones $2,500<br>
-Promoción inauguración $2,000 🎁
 </div>
+</section>
 
-<span class="back" onclick="goBack()">← Volver</span>
+<!-- PROMO -->
+<section class="promo">
+<div class="promo-box">
+<h2>Promoción especial</h2>
+<p>10 sesiones por $2,500</p>
+<p class="oferta">Inauguración: $2,000 + regalo 🎁</p>
+</div>
 </section>
 
 <!-- CONTACTO -->
-<section class="section" id="contacto">
+<section id="contacto" class="section">
 <h2>Contacto</h2>
 
-<div class="contact">
-<form>
-<input placeholder="Nombre">
+<div class="contact-grid">
+
+<form class="form">
+<input placeholder="Nombre completo">
 <input placeholder="Teléfono">
 <textarea placeholder="Mensaje"></textarea>
-<button class="btn">Enviar</button>
+<button class="btn">Enviar por WhatsApp</button>
 </form>
 
-<div>
+<div class="info">
 <p><b>WhatsApp:</b> 55 94 29 28 11</p>
 <p><b>Horario:</b> Lun - Sáb 9:00 - 19:00</p>
 </div>
@@ -220,30 +140,26 @@ Promoción inauguración $2,000 🎁
 </div>
 </section>
 
+<!-- PRIVACIDAD -->
+<section id="privacidad" class="section">
+<h2>Política de privacidad</h2>
+
+<p>
+Toda la información proporcionada por nuestros clientes será utilizada únicamente con fines de contacto, seguimiento de servicios y atención personalizada.
+</p>
+
+<p>
+Amore Mio Beauty Spa garantiza la confidencialidad de los datos personales y se compromete a no compartirlos con terceros.
+</p>
+
+<p>
+Al utilizar nuestros servicios, aceptas nuestros términos y condiciones.
+</p>
+</section>
+
 <footer>
 © 2026 Amore Mio Beauty Spa
 </footer>
-
-<script>
-function showSection(id){
-  document.querySelectorAll(".section").forEach(sec=>{
-    if(sec.id !== "menu-servicios" && sec.id !== "nosotros" && sec.id !== "contacto"){
-      sec.classList.add("hidden");
-    }
-  });
-  document.getElementById(id).classList.remove("hidden");
-  window.scrollTo(0,0);
-}
-
-function goBack(){
-  document.querySelectorAll(".section").forEach(sec=>{
-    if(sec.id !== "menu-servicios" && sec.id !== "nosotros" && sec.id !== "contacto"){
-      sec.classList.add("hidden");
-    }
-  });
-  window.scrollTo(0,500);
-}
-</script>
 
 </body>
 </html>
