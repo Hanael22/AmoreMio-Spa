@@ -1,18 +1,4 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Amore Mio | Luxury Spa Experience</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-</head>
-<body>
-
-    <div class="butterfly b-top">🦋</div>
-    <div class="butterfly b-bottom">🦋</div>
-
-    <nav class="navbar">
+<nav class="navbar">
         <div class="nav-content">
             <div class="nav-logo">AMORE MIO</div>
             <div class="nav-links">
@@ -21,7 +7,7 @@
                 <a href="javascript:void(0)" onclick="navegar('servicios')" class="link-item" id="link-servicios">Servicios</a>
                 <a href="javascript:void(0)" onclick="navegar('contacto')" class="link-item" id="link-contacto">Contacto</a>
             </div>
-            <a href="https://wa.me/5215594292811" class="nav-cta">Reservar Cita</a>
+            <a href="https://wa.me/525579696678?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20en%20Amore%20Mio.%20¿Qué%20disponibilidad%20tienen?" target="_blank" class="nav-cta">Reservar Cita</a>
         </div>
     </nav>
 
@@ -34,6 +20,10 @@
                     <h1 class="hero-title">Tu belleza, elevada al siguiente nivel</h1>
                     <p class="hero-tagline">Experiencias únicas diseñadas para el bienestar de tu cuerpo y mente.</p>
                     <button class="hero-btn" onclick="navegar('servicios')">Explorar Menú de Servicios</button>
+                    
+                    <div class="hero-image-container">
+                        <div class="img-placeholder-hero">FOTO PRINCIPAL AQUÍ</div>
+                    </div>
                 </div>
             </header>
 
@@ -61,31 +51,27 @@
             </section>
         </div>
 
-        <div id="view-nosotros" class="view">
-            <div class="container"><h2>Nuestra Historia</h2><p>Próximamente...</p></div>
-        </div>
-        <div id="view-servicios" class="view">
-            <div class="container"><h2>Nuestros Servicios</h2><p>Próximamente...</p></div>
-        </div>
-        <div id="view-contacto" class="view">
-            <div class="container"><h2>Contacto</h2><p>Próximamente...</p></div>
-        </div>
-
+        <footer class="main-footer">
+            <div class="contact-section">
+                <h2 class="section-heading">Contacto</h2>
+                <div class="contact-container">
+                    <form class="contact-form">
+                        <input type="text" placeholder="Tu Nombre">
+                        <input type="tel" placeholder="Tu Teléfono">
+                        <textarea placeholder="¿En qué servicio estás interesada?"></textarea>
+                        <button type="button" class="btn-send">Enviar Mensaje</button>
+                    </form>
+                    <div class="contact-info">
+                        <p><strong>WhatsApp:</strong> 55 79 69 66 78</p>
+                        <p><strong>Horario:</strong> Lun - Sáb 9:00 - 19:00</p>
+                        <div class="map-placeholder">
+                            <span>MAPA DE UBICACIÓN AQUÍ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-bar">
+                <p>© 2026 Amore Mio Beauty Spa | Todos los derechos reservados.</p>
+            </div>
+        </footer>
     </div>
-
-    <script>
-        function navegar(seccion) {
-            // 1. Gestionar clases de las vistas
-            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-            document.getElementById('view-' + seccion).classList.add('active');
-
-            // 2. Gestionar estado del menú
-            document.querySelectorAll('.link-item').forEach(l => l.classList.remove('active'));
-            document.getElementById('link-' + seccion).classList.add('active');
-
-            // 3. Scroll suave al inicio
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
-</body>
-</html>
