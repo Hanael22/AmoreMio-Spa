@@ -6,63 +6,75 @@
   --blanco:#ffffff;
 }
 
+/* BASE */
 body{
   margin:0;
-  font-family: 'Segoe UI', sans-serif;
-  background: var(--crema);
+  font-family:'Segoe UI',sans-serif;
+  background:var(--crema);
   color:var(--texto);
+  overflow-x:hidden;
 }
 
-.navbar{
+/* NAV */
+.nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
   padding:20px 40px;
-  background: white;
+  background:white;
   position:sticky;
   top:0;
   z-index:1000;
-  box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.nav a{
+  margin:0 10px;
+  text-decoration:none;
+  color:#333;
 }
 
 .logo{
-  font-size:1.5rem;
   font-weight:bold;
+  font-size:1.5rem;
   color:var(--rosa-oscuro);
 }
 
-.menu a{
-  margin:0 15px;
-  text-decoration:none;
-  color:#444;
-}
-
-.btn-nav{
-  background:var(--rosa);
-  color:white;
-  padding:10px 20px;
-  border-radius:10px;
-}
-
+/* HERO */
 .hero{
-  padding:80px 20px;
+  height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   text-align:center;
 }
 
 .hero h1{
+  font-size:3rem;
   color:var(--rosa-oscuro);
 }
 
+.hero p{
+  margin:15px 0;
+}
+
+/* BOTON */
 .btn{
   background:var(--rosa);
   color:white;
   padding:12px 25px;
   border-radius:10px;
   text-decoration:none;
+  transition:.3s;
 }
 
+.btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* SECCIONES */
 .section{
-  padding:60px 20px;
+  padding:70px 20px;
   max-width:1200px;
   margin:auto;
 }
@@ -70,87 +82,85 @@ body{
 h2{
   text-align:center;
   color:var(--rosa-oscuro);
+  margin-bottom:40px;
 }
 
-.cards{
+/* GRID */
+.grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:25px;
 }
 
+/* CARDS */
 .card{
   background:white;
   border-radius:20px;
   overflow:hidden;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
-  cursor:pointer;
+  text-align:center;
+  padding-bottom:20px;
+  transition:.4s;
 }
 
+.card:hover{
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* IMAGENES */
 .img-placeholder{
-  height:180px;
+  height:200px;
   background:#ddd;
 }
 
-.card-body{
-  padding:20px;
-  text-align:center;
+.img-placeholder.grande{
+  height:300px;
 }
 
-.hidden{
-  display:none;
-}
-
-.services-list{
+/* NOSOTROS */
+.nosotros-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:15px;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
 }
 
-.service{
-  background:white;
-  padding:15px;
-  border-radius:10px;
-  text-align:center;
+/* PROMO */
+.promo{
+  display:flex;
+  justify-content:center;
 }
 
-.price{
+.promo-box{
+  background:var(--rosa);
+  color:white;
+  padding:40px;
+  border-radius:20px;
   text-align:center;
-  margin-top:20px;
-  font-size:1.3rem;
-  color:var(--rosa-oscuro);
+  width:400px;
+}
+
+.oferta{
+  font-size:1.2rem;
   font-weight:bold;
 }
 
-.promo{
-  background:var(--rosa);
-  color:white;
-  padding:20px;
-  border-radius:15px;
-  text-align:center;
-  margin-top:20px;
-}
-
-.back{
-  display:block;
-  margin-top:20px;
-  text-align:center;
-  cursor:pointer;
-}
-
-.contact{
+/* CONTACTO */
+.contact-grid{
   display:grid;
   grid-template-columns:1fr 300px;
   gap:20px;
 }
 
-input, textarea{
+.form input, .form textarea{
   width:100%;
   padding:12px;
-  margin:5px 0;
+  margin:8px 0;
   border-radius:10px;
   border:1px solid #ccc;
 }
 
+/* FOOTER */
 footer{
   text-align:center;
   padding:30px;
@@ -158,8 +168,34 @@ footer{
   color:white;
 }
 
+/* 🦋 MARIPOSAS */
+.butterfly{
+  position:fixed;
+  width:30px;
+  height:30px;
+  background:var(--rosa);
+  border-radius:50%;
+  opacity:0.3;
+  animation:float 10s infinite;
+}
+
+.b1{ top:20%; left:10%; }
+.b2{ top:60%; left:80%; }
+.b3{ top:40%; left:50%; }
+
+@keyframes float{
+  0%{ transform:translateY(0);}
+  50%{ transform:translateY(-40px);}
+  100%{ transform:translateY(0);}
+}
+
+/* RESPONSIVE */
 @media(max-width:800px){
-  .contact{
+  .nosotros-grid{
+    grid-template-columns:1fr;
+  }
+
+  .contact-grid{
     grid-template-columns:1fr;
   }
 }
