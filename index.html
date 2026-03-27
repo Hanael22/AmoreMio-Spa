@@ -1,165 +1,192 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Amore Mio Beauty Spa</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Amore Mio | Luxury Spa & Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
 
-<!-- 🦋 DECORACIONES -->
-<div class="butterfly b1"></div>
-<div class="butterfly b2"></div>
-<div class="butterfly b3"></div>
+    <div class="butterfly-container">
+        <div class="butterfly" style="top: 15%; left: 5%;">🦋</div>
+        <div class="butterfly" style="top: 60%; left: 90%;">🦋</div>
+        <div class="butterfly" style="top: 85%; left: 10%;">🦋</div>
+    </div>
 
-<!-- NAV -->
-<header class="nav">
-  <div class="logo">Amore Mio</div>
+    <nav class="navbar">
+        <div class="logo-container">
+            <span class="logo-text">AMORE MIO</span>
+            <span class="logo-butterfly">🦋</span>
+            <p class="logo-sub">BEAUTY SPA & MAKE UP</p>
+        </div>
+        
+        <div class="menu">
+            <a href="javascript:void(0)" onclick="showSheet('home')" class="nav-link active">Inicio</a>
+            <a href="javascript:void(0)" onclick="showSheet('nosotros')" class="nav-link">Nosotros</a>
+            <a href="javascript:void(0)" onclick="showSheet('servicios')" class="nav-link">Servicios</a>
+            <a href="javascript:void(0)" onclick="showSheet('contacto')" class="nav-link">Contacto</a>
+        </div>
+        
+        <a class="btn-nav" href="https://wa.me/5215594292811" target="_blank">Reservar Ahora</a>
+    </nav>
 
-  <nav>
-    <a href="#home">Inicio</a>
-    <a href="#nosotros">Nosotros</a>
-    <a href="#menu">Servicios</a>
-    <a href="#contacto">Contacto</a>
-    <a href="#privacidad">Privacidad</a>
-  </nav>
+    <div id="sheet-home" class="sheet active-sheet">
+        <section class="hero">
+            <div class="hero-overlay">
+                <h1 class="reveal-text">Tu belleza, elevada al siguiente nivel</h1>
+                <p class="hero-p">Un refugio de elegancia donde cada tratamiento es un ritual de amor propio.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-main" onclick="showSheet('servicios')">Explorar Menú</button>
+                    <button class="btn btn-outline" onclick="showSheet('nosotros')">Nuestra Historia</button>
+                </div>
+            </div>
+        </section>
+    </div>
 
-  <a href="#" class="btn">Reservar</a>
-</header>
+    <div id="sheet-nosotros" class="sheet">
+        <section class="section">
+            <div class="container-small">
+                <span class="section-tag">Bienvenida</span>
+                <h2>Sobre Amore Mio</h2>
+                <div class="about-content">
+                    <p>En <b>Amore Mio Beauty Spa & Make Up</b>, no solo realizamos tratamientos estéticos; diseñamos transformaciones integrales. Nuestra filosofía se basa en la armonía entre el cuerpo y la mente, utilizando tecnología de vanguardia y manos expertas que entienden que cada cliente es único.</p>
+                    <p>Ubicados en un entorno de paz, hemos creado un refugio donde el estrés del mundo exterior desaparece. Desde nuestras famosas técnicas de moldeado corporal hasta el maquillaje profesional más sofisticado, cada detalle está pensado para resaltar la mejor versión de ti misma.</p>
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800" class="about-img" alt="Ambiente Spa">
+                </div>
+            </div>
+        </section>
+    </div>
 
-<!-- HERO -->
-<section id="home" class="hero">
-  <div class="hero-content">
-    <h1>Elegancia, belleza y armonía</h1>
-    <p>Descubre tratamientos diseñados para resaltar tu mejor versión</p>
-    <a href="#menu" class="btn">Ver servicios</a>
-  </div>
-</section>
+    <div id="sheet-servicios" class="sheet">
+        <section class="section">
+            <span class="section-tag">Experiencias</span>
+            <h2>Menú de Servicios</h2>
+            <div class="cards-grid">
+                
+                <div class="card" onclick="showSheet('sub-cintura')">
+                    <div class="card-img-wrapper">
+                        <div class="card-overlay">Ver Detalle</div>
+                        <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=500" alt="Cintura">
+                    </div>
+                    <div class="card-info">
+                        <h3>Cintura de Barbie</h3>
+                        <p class="card-tagline">Silueta definida y elegante ✨</p>
+                    </div>
+                </div>
 
-<!-- NOSOTROS -->
-<section id="nosotros" class="section">
-<h2>Nosotros</h2>
+                <div class="card" onclick="showSheet('sub-gluteos')">
+                    <div class="card-img-wrapper">
+                        <div class="card-overlay">Ver Detalle</div>
+                        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=500" alt="Glúteos">
+                    </div>
+                    <div class="card-info">
+                        <h3>Glúteos Perfectos</h3>
+                        <p class="card-tagline">Duraznito perfecto 🍑</p>
+                    </div>
+                </div>
 
-<div class="nosotros-grid">
+                <div class="card" onclick="showSheet('sub-piernas')">
+                    <div class="card-img-wrapper">
+                        <div class="card-overlay">Ver Detalle</div>
+                        <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=500" alt="Piernas">
+                    </div>
+                    <div class="card-info">
+                        <h3>Piernas de Seda</h3>
+                        <p class="card-tagline">Adiós a la piel de naranja 🦵</p>
+                    </div>
+                </div>
 
-<div>
-<p>
-En Amore Mio Beauty Spa hemos creado un espacio íntimo, elegante y relajante pensado para que cada persona se sienta especial.
-</p>
+            </div>
+        </section>
+    </div>
 
-<p>
-Nos enfocamos en tratamientos personalizados que ayudan a mejorar tu bienestar físico y emocional.
-Cada servicio está diseñado para ofrecer resultados visibles mientras disfrutas una experiencia única.
-</p>
+    <div id="sheet-sub-cintura" class="sheet">
+        <section class="section sub-section">
+            <button class="btn-back" onclick="showSheet('servicios')">← Volver al menú</button>
+            <h2>Detalle: Cintura de Barbie</h2>
+            <div class="service-detail-grid">
+                <div class="service-list-premium">
+                    <div class="service-item"><span>✦</span> Maderoterapia</div>
+                    <div class="service-item"><span>✦</span> Cavitación</div>
+                    <div class="service-item"><span>✦</span> Radiofrecuencia</div>
+                    <div class="service-item"><span>✦</span> Cierre de costillas</div>
+                    <div class="service-item"><span>✦</span> Vendas frías</div>
+                </div>
+                <div class="service-promo-box">
+                    <p class="p-price">$400 / sesión</p>
+                    <div class="promo-tag">OFERTA INAUGURACIÓN: 10 SESIONES POR $2,000 🎁</div>
+                </div>
+            </div>
+        </section>
+    </div>
 
-<p>
-Nuestro objetivo es brindarte un momento de desconexión total, donde tu cuerpo, mente y belleza se alineen en perfecta armonía.
-</p>
-</div>
+    <div id="sheet-contacto" class="sheet">
+        <section class="section">
+            <h2>Hablemos</h2>
+            <div class="contact-wrapper">
+                <form class="luxury-form" onsubmit="sendWhatsApp(event)">
+                    <div class="input-group">
+                        <input type="text" id="c-name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="input-group">
+                        <select id="c-service">
+                            <option>Cintura de Barbie</option>
+                            <option>Glúteos Perfectos</option>
+                            <option>Piernas de Seda</option>
+                        </select>
+                    </div>
+                    <textarea id="c-msg" placeholder="¿En qué horario te gustaría tu cita?"></textarea>
+                    <button class="btn btn-main" type="submit">Enviar Solicitud</button>
+                </form>
+            </div>
+        </section>
+    </div>
 
-<div class="img-placeholder grande"></div>
+    <section class="section legal-section">
+        <div class="legal-box">
+            <h3>Privacidad y Acuerdos Profesionales</h3>
+            <p>En cumplimiento con la Ley de Protección de Datos, Amore Mio Spa garantiza que la información proporcionada (nombre, teléfono y preferencias) será utilizada **estrictamente con fines profesionales** para la gestión de citas y asesoría estética. No compartimos datos con terceros. Al enviar sus datos, usted acepta que el contacto sea exclusivamente para fines de bienestar y servicios del Spa.</p>
+        </div>
+    </section>
 
-</div>
-</section>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Amore Mio Beauty Spa | Todos los derechos reservados.</p>
+            <p class="legal-small">Desarrollado con fines profesionales y estéticos.</p>
+        </div>
+    </footer>
 
-<!-- MENU PRINCIPAL -->
-<section id="menu" class="section">
-<h2>Explora nuestros servicios</h2>
+    <script>
+        function showSheet(sheetId) {
+            // Ocultar todas las hojas
+            document.querySelectorAll('.sheet').forEach(s => {
+                s.classList.remove('active-sheet');
+                s.style.display = 'none';
+            });
+            
+            // Mostrar la seleccionada con animación
+            const target = document.getElementById('sheet-' + sheetId);
+            target.style.display = 'block';
+            setTimeout(() => {
+                target.classList.add('active-sheet');
+            }, 10);
 
-<div class="grid">
+            // Actualizar menú activo
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            
+            window.scrollTo(0, 0);
+        }
 
-<!-- GENERAL -->
-<a href="servicios.html" class="card">
-<div class="img-placeholder"></div>
-<h3>Servicios</h3>
-<p>Descubre todos nuestros tratamientos</p>
-</a>
-
-<!-- CINTURA -->
-<a href="cintura.html" class="card">
-<div class="img-placeholder"></div>
-<h3>Cintura</h3>
-<p>Moldea tu figura con precisión</p>
-</a>
-
-<!-- GLUTEOS -->
-<a href="gluteos.html" class="card">
-<div class="img-placeholder"></div>
-<h3>Glúteos</h3>
-<p>Duraznito perfecto 🍑</p>
-</a>
-
-<!-- PIERNAS -->
-<a href="piernas.html" class="card">
-<div class="img-placeholder"></div>
-<h3>Piernas</h3>
-<p>Adiós a la piel de naranja</p>
-</a>
-
-<!-- ESPALDA -->
-<a href="espalda.html" class="card">
-<div class="img-placeholder"></div>
-<h3>Espalda y brazos</h3>
-<p>Define y relaja tu cuerpo</p>
-</a>
-
-</div>
-</section>
-
-<!-- PROMO -->
-<section class="promo">
-<div class="promo-box">
-<h2>Promoción especial</h2>
-<p>10 sesiones por $2,500</p>
-<p class="oferta">Inauguración: $2,000 + regalo 🎁</p>
-</div>
-</section>
-
-<!-- CONTACTO -->
-<section id="contacto" class="section">
-<h2>Contacto</h2>
-
-<div class="contact-grid">
-
-<form class="form">
-<input placeholder="Nombre completo">
-<input placeholder="Teléfono">
-<textarea placeholder="Mensaje"></textarea>
-<button class="btn">Enviar por WhatsApp</button>
-</form>
-
-<div class="info">
-<p><b>WhatsApp:</b> 55 94 29 28 11</p>
-<p><b>Horario:</b> Lun - Sáb 9:00 - 19:00</p>
-</div>
-
-</div>
-</section>
-
-<!-- PRIVACIDAD -->
-<section id="privacidad" class="section">
-<h2>Política de privacidad</h2>
-
-<p>
-Toda la información proporcionada por nuestros clientes será utilizada únicamente con fines de contacto, seguimiento de servicios y atención personalizada.
-</p>
-
-<p>
-Amore Mio Beauty Spa garantiza la confidencialidad de los datos personales y se compromete a no compartirlos con terceros.
-</p>
-
-<p>
-Al utilizar nuestros servicios, aceptas nuestros términos y condiciones.
-</p>
-</section>
-
-<footer>
-© 2026 Amore Mio Beauty Spa
-</footer>
-
+        function sendWhatsApp(e) {
+            e.preventDefault();
+            const n = document.getElementById('c-name').value;
+            const s = document.getElementById('c-service').value;
+            const msg = `Hola! Soy ${n}, me interesa el servicio de ${s}.`;
+            window.open(`https://wa.me/5215594292811?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+    </script>
 </body>
 </html>
