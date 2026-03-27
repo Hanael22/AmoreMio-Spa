@@ -3,177 +3,60 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Amore Mio Beauty Spa & Make Up</title>
+    <title>Amore Mio | Beauty Spa</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="logo-nav">Amore Mio</div>
-    <div class="menu">
-        <a href="#" onclick="showHome()">Inicio</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#menu-servicios">Servicios</a>
-        <a href="#contacto">Contacto</a>
-    </div>
-    <a class="btn-reservar" href="#contacto">Reservar Ahora</a>
-</nav>
-
-<main id="home-view">
-    <section class="hero">
-        <div class="logo-container">
-            <img src="logo.png" alt="Amore Mio Logo" class="main-logo">
+    <nav class="navbar">
+        <div class="logo-nav">Amore Mio</div>
+        <div class="menu">
+            <a href="javascript:void(0)" onclick="navegar('home')">Home</a>
+            <a href="javascript:void(0)" onclick="navegar('nosotros')">Nosotros</a>
+            <a href="javascript:void(0)" onclick="navegar('servicios')">Servicios</a>
+            <a href="javascript:void(0)" onclick="navegar('contacto')">Contacto</a>
         </div>
-        <button class="btn-agendar">Agendar Cita</button>
-        
-        <div class="hero-text">
-            <h1>Tu belleza, elevada al siguiente nivel</h1>
-            <p>Un refugio de elegancia donde cada tratamiento es un ritual de amor propio.</p>
-            <div class="hero-btns">
-                <a href="#menu-servicios" class="btn-dark">Explorar Menú</a>
-                <a href="#nosotros" class="btn-light">Nuestra Historia</a>
-            </div>
-        </div>
-    </section>
+        <a class="btn-nav" href="https://wa.me/5215594292811">Reservar</a>
+    </nav>
 
-    <section class="section" id="nosotros">
-        <h2>Nosotros</h2>
-        <p class="text-center">Somos un espacio donde te sentirás en tu propio refugio. Creamos experiencias personalizadas enfocadas en tu bienestar físico y emocional.</p>
-    </section>
-
-    <section class="section" id="menu-servicios">
-        <h2>Servicios</h2>
-        <div class="cards-container">
-            <div class="card" onclick="showSection('general')">
-                <div class="img-placeholder"></div>
-                <div class="card-footer"><h3>Servicios</h3><p>Todos nuestros tratamientos</p></div>
+    <div id="hoja-home" class="hoja activa">
+        <section class="hero">
+            <div class="hero-content">
+                <div class="logo-wrapper">
+                    <img src="logo.png" alt="Amore Mio Logo" class="main-logo">
+                </div>
+                
+                <h1>Tu belleza, elevada al siguiente nivel</h1>
+                <p>Experiencias únicas para cuerpo y mente</p>
+                
+                <button class="btn-principal" onclick="navegar('servicios')">Explorar Servicios</button>
             </div>
-            <div class="card" onclick="showSection('cintura')">
-                <div class="img-placeholder"></div>
-                <div class="card-footer"><h3>Cintura</h3></div>
-            </div>
-            <div class="card" onclick="showSection('gluteos')">
-                <div class="img-placeholder"></div>
-                <div class="card-footer"><h3>Glúteos</h3></div>
-            </div>
-            <div class="card" onclick="showSection('piernas')">
-                <div class="img-placeholder"></div>
-                <div class="card-footer"><h3>Piernas</h3></div>
-            </div>
-            <div class="card" onclick="showSection('espalda')">
-                <div class="img-placeholder"></div>
-                <div class="card-footer"><h3>Espalda y Brazos</h3></div>
-            </div>
-        </div>
-    </section>
-</main>
-
-<section id="general" class="detail-section hidden">
-    <h2>Servicios</h2>
-    <div class="services-grid">
-        <div class="s-item">Masaje reductivo</div>
-        <div class="s-item">Masaje relajante</div>
-        <div class="s-item">Masaje descontracturante</div>
-        <div class="s-item">Drenaje linfático</div>
-        <div class="s-item">Maderoterapia</div>
-        <div class="s-item">Levantamiento de glúteos</div>
-        <div class="s-item">Tratamiento de anticelulitis</div>
-        <div class="s-item">Limpiezas faciales</div>
-        <div class="s-item">Cavitación</div>
-        <div class="s-item">Radiofrecuencia</div>
-        <div class="s-item">Vacumterapia</div>
-        <div class="s-item">Gimnasia Pasiva</div>
-        <div class="s-item">Copas colombianas</div>
-        <div class="s-item" onclick="showSection('maquillaje')">Maquillaje profesional</div>
+        </section>
     </div>
-    <button class="back-btn" onclick="showHome()">← Volver</button>
-</section>
 
-<section id="cintura" class="detail-section hidden">
-    <h2>Cintura de Barbie</h2>
-    <div class="services-grid">
-        <div class="s-item">Maderoterapia</div>
-        <div class="s-item">Cavitación</div>
-        <div class="s-item">Radiofrecuencia</div>
-        <div class="s-item">Cierre de costillas</div>
-        <div class="s-item">Masaje manual</div>
-        <div class="s-item">Mesoterapia</div>
-        <div class="s-item">Vendas frías</div>
-        <div class="s-item">Vacumterapia</div>
-        <div class="s-item">Drenaje linfático</div>
-        <div class="s-item">Gimnasia pasiva</div>
-    </div>
-    <div class="price-tag">$400 / sesión</div>
-    <div class="promo-box">
-        <p>10 sesiones $2,500</p>
-        <p>Promoción inauguración <strong>$2,000 🎁</strong></p>
-    </div>
-    <button class="back-btn" onclick="showHome()">← Volver</button>
-</section>
+    <div id="hoja-nosotros" class="hoja"></div>
+    <div id="hoja-servicios" class="hoja"></div>
+    <div id="hoja-contacto" class="hoja"></div>
 
-<section id="maquillaje" class="detail-section hidden">
-    <h2>Maquillaje profesional</h2>
-    <p class="text-center">Realzamos tu belleza para cualquier ocasión especial.</p>
-    <div class="photo-gallery">
-        <div class="photo-slot">FOTO 1</div>
-        <div class="photo-slot">FOTO 2</div>
-        <div class="photo-slot">FOTO 3</div>
-        <div class="photo-slot">FOTO 4</div>
-        <div class="photo-slot">FOTO 5</div>
-    </div>
-    <div class="contact-mini">
-        <h3>Agenda tu cita</h3>
-        <div class="contact-container">
-            <form class="contact-form">
-                <input type="text" placeholder="Nombre completo">
-                <input type="tel" placeholder="Teléfono">
-                <select>
-                    <option>Maquillaje Social</option>
-                    <option>Maquillaje de Novia</option>
-                </select>
-                <textarea placeholder="Fecha deseada"></textarea>
-                <button type="button" class="btn-send">Enviar</button>
-            </form>
-            <div class="contact-info">
-                <p><strong>WhatsApp:</strong><br>55 94 29 28 11</p>
-                <p><strong>Horario:</strong><br>Lun - Sáb 9:00 - 19:00</p>
-            </div>
-        </div>
-    </div>
-    <button class="back-btn" onclick="showHome()">← Volver</button>
-</section>
+    <script>
+        // Función para cambiar de "Hoja" como en Excel
+        function navegar(idHoja) {
+            // 1. Ocultar todas las hojas
+            const hojas = document.querySelectorAll('.hoja');
+            hojas.forEach(hoja => {
+                hoja.classList.remove('activa');
+            });
 
-<footer id="contacto">
-    <div class="contact-section">
-        <h2>Contacto</h2>
-        <div class="contact-container">
-            <form class="contact-form">
-                <input type="text" placeholder="Nombre">
-                <input type="tel" placeholder="Teléfono">
-                <textarea placeholder="Mensaje"></textarea>
-                <button type="button" class="btn-send">Enviar</button>
-            </form>
-            <div class="contact-info">
-                <p><strong>WhatsApp:</strong> 55 94 29 28 11</p>
-                <p><strong>Horario:</strong> Lun - Sáb 9:00 - 19:00</p>
-            </div>
-        </div>
-    </div>
-    <p class="copy">© 2026 Amore Mio Beauty Spa | Todos los derechos reservados.</p>
-</footer>
+            // 2. Mostrar solo la hoja seleccionada
+            const destino = document.getElementById('hoja-' + idHoja);
+            if (destino) {
+                destino.classList.add('activa');
+            }
 
-<script>
-    function showSection(id) {
-        document.getElementById('home-view').classList.add('hidden');
-        document.querySelectorAll('.detail-section').forEach(s => s.classList.add('hidden'));
-        document.getElementById(id).classList.remove('hidden');
-        window.scrollTo(0, 0);
-    }
+            // 3. Subir al inicio de la página automáticamente
+            window.scrollTo(0, 0);
+        }
+    </script>
 
-    function showHome() {
-        document.querySelectorAll('.detail-section').forEach(s => s.classList.add('hidden'));
-        document.getElementById('home-view').classList.remove('hidden');
-    }
-</script>
 </body>
 </html>
