@@ -337,3 +337,104 @@ body {
         box-shadow: 10px 10px 0px var(--rosa);
     }
 }
+
+/* ESTILOS SECCIÓN SERVICIOS */
+.servicios-section {
+    padding: 80px 20px;
+    background: white;
+}
+
+.servicios-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: -40px auto 50px;
+    opacity: 0.7;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.servicio-card {
+    background: var(--blanco);
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.servicio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(217, 139, 181, 0.15);
+}
+
+.servicio-img-wrapper {
+    position: relative;
+    height: 220px;
+    background: #f0f0f0;
+}
+
+.img-placeholder-serv {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: #999;
+}
+
+.badge-precio {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: var(--rosa-oscuro);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.servicio-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.servicio-info h3 {
+    font-family: var(--font-header);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--rosa-oscuro);
+}
+
+.frase-servicio {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.promo-mini {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--texto);
+    background: var(--crema);
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+
+.inauguracion-tag {
+    font-size: 0.75rem;
+    color: #d9534f; /* Color alerta/oferta */
+    font-weight: 700;
+    line-height: 1.3;
+}
