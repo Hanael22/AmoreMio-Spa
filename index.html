@@ -93,22 +93,100 @@
 
         <div id="view-servicios" class="view">
             <section class="servicios-section">
-    <div class="container-servicios">
-        <h2 class="section-heading">Nuestras Experiencias</h2>
-        <p class="servicios-intro">Resultados visibles desde la primera sesión con aparatología de vanguardia.</p>
+        <div class="container-servicios">
+            <h2 class="section-heading">Nuestras Experiencias</h2>
+            <p class="servicios-intro">Resultados visibles desde la primera sesión con aparatología de vanguardia.</p>
 
-        <div class="servicios-grid">
-            <div class="servicio-card" onclick="toggleDetalle('cintura')">
-                <div class="servicio-img-wrapper">
-                    <div class="img-placeholder-serv">IMAGEN CINTURA</div>
-                    <div class="badge-precio">$400 / Sesión</div>
+            <div class="servicios-grid">
+                <div class="servicio-card" onclick="toggleDetalle('cintura')">
+                    <div class="servicio-img-wrapper">
+                        <div class="img-placeholder-serv">IMAGEN CINTURA</div>
+                        <div class="badge-precio">$400 / Sesión</div>
+                    </div>
+                    <div class="servicio-info">
+                        <h3>Cintura de Barbie</h3>
+                        <p class="frase-servicio">Esculpe tu silueta con nuestra técnica insignia.</p>
+                        <div class="promo-mini">10 sesiones por $2,500</div>
+                        <div class="inauguracion-tag">🎁 Inauguración: 10 ses. x $2,000 + Regalo</div>
+                    </div>
                 </div>
-                <div class="servicio-info">
-                    <h3>Cintura de Barbie</h3>
-                    <p class="frase-servicio">Esculpe tu silueta con nuestra técnica insignia.</p>
-                    <div class="promo-mini">10 sesiones por $2,500</div>
-                    <div class="inauguracion-tag">🎁 Inauguración: 10 ses. x $2,000 + Regalo</div>
+
+                <div class="servicio-card" onclick="toggleDetalle('gluteos')">
+                    <div class="servicio-img-wrapper">
+                        <div class="img-placeholder-serv">IMAGEN GLÚTEOS</div>
+                        <div class="badge-precio">$500 / Sesión</div>
+                    </div>
+                    <div class="servicio-info">
+                        <h3>Glúteos Perfectos</h3>
+                        <p class="frase-servicio">Duraznito perfecto: firmeza y volumen natural.</p>
+                        <div class="promo-mini">10 sesiones por $2,500</div>
+                        <div class="inauguracion-tag">🎁 Inauguración: 10 ses. x $2,000 + Regalo</div>
+                    </div>
                 </div>
+
+                <div class="servicio-card" onclick="toggleDetalle('piernas')">
+                    <div class="servicio-img-wrapper">
+                        <div class="img-placeholder-serv">IMAGEN PIERNAS</div>
+                        <div class="badge-precio">$400 / Sesión</div>
+                    </div>
+                    <div class="servicio-info">
+                        <h3>Piernas de Seda</h3>
+                        <p class="frase-servicio">Adiós piel naranja 🍊. Piernas suaves y tonificadas.</p>
+                        <div class="promo-mini">10 sesiones por $2,500</div>
+                        <div class="inauguracion-tag">🎁 Inauguración: 10 ses. x $2,000 + Regalo</div>
+                    </div>
+                </div>
+
+                <div class="servicio-card no-list">
+                    <div class="servicio-img-wrapper">
+                        <div class="img-placeholder-serv">IMAGEN BRAZOS</div>
+                        <div class="badge-precio">$400 / Sesión</div>
+                    </div>
+                    <div class="servicio-info">
+                        <h3>Espalda y Brazos</h3>
+                        <p class="frase-servicio">Define y reafirma. Ideal para lucir cualquier vestido.</p>
+                        <div class="promo-mini">10 sesiones por $2,500</div>
+                        <div class="inauguracion-tag">🎁 Inauguración: 10 ses. x $2,000 + Regalo</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="detalle-servicio" class="detalle-container">
+                <div class="detalle-content">
+                    <button class="btn-cerrar" onclick="cerrarDetalle()">✕</button>
+                    <h3 id="detalle-titulo">Título del Servicio</h3>
+                    <p id="detalle-frase" class="frase-destacada"></p>
+                    <ul id="lista-servicios" class="lista-premium"></ul>
+                    <div class="info-adicional">
+                        <p>✨ 1 sesión de 1 hora</p>
+                        <p>📅 Previa cita vía WhatsApp</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="maquillaje-special-section">
+    <div class="maquillaje-grid">
+        <div class="maquillaje-text">
+            <h3>Maquillaje Profesional</h3>
+            <p>Realzamos tu belleza natural para esos momentos que duran para siempre. Especialistas en novias y eventos sociales.</p>
+            <ul class="lista-simple">
+                <li>Social (Graduaciones, fiestas)</li>
+                <li>Novias (Incluye prueba)</li>
+                <li>Producciones editoriales</li>
+            </ul>
+            <a href="https://wa.me/525579696678?text=Hola,%20me%20interesa%20información%20sobre%20el%20maquillaje" target="_blank" class="btn-maquillaje">Consultar disponibilidad</a>
+        </div>
+        
+        <div class="maquillaje-galeria">
+            <div class="foto-item f1">FOTO 1</div>
+            <div class="foto-item f2">FOTO 2</div>
+            <div class="foto-item f3">FOTO 3</div>
+            <div class="foto-item f4">FOTO 4</div>
+            <div class="foto-item f5">FOTO 5</div>
+        </div>
+    </div>
+</div>
+    </section>
             </div>
 
             <div class="servicio-card" onclick="toggleDetalle('gluteos')">
@@ -196,6 +274,45 @@
 
             // 4. Subir al inicio suavemente
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        const datosServicios = {
+            cintura: {
+                titulo: "Cintura de Barbie",
+                frase: "Esculpe la figura de tus sueños.",
+                lista: ["Maderoterapia", "Cavitación", "Radiofrecuencia", "Cierre de costillas", "Masaje manual", "Mesoterapia", "Vendas frías", "Vacumterapia", "Drenaje linfático", "Gimnasia pasiva"]
+            },
+            gluteos: {
+                titulo: "Glúteos Perfectos",
+                frase: "Duraznito perfecto.",
+                lista: ["Copas colombianas", "Maderoterapia", "Gimnasia pasiva", "Vacumterapia", "Levantamiento de glúteos", "Cavitación", "Radiofrecuencia", "Masaje manual"]
+            },
+            piernas: {
+                titulo: "Piernas de Seda",
+                frase: "Adiós piel naranja 🍊.",
+                lista: ["Drenaje linfático", "Radiofrecuencia", "Cavitación", "Copas colombianas", "Gimnasia pasiva", "Maderoterapia", "Vacumterapia"]
+            }
+        };
+
+        function toggleDetalle(slug) {
+            const info = datosServicios[slug];
+            if (!info) return;
+
+            document.getElementById('detalle-titulo').innerText = info.titulo;
+            document.getElementById('detalle-frase').innerText = info.frase;
+            const listaUl = document.getElementById('lista-servicios');
+            listaUl.innerHTML = "";
+            info.lista.forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = "✨ " + item;
+                listaUl.appendChild(li);
+            });
+            const contenedor = document.getElementById('detalle-servicio');
+            contenedor.style.display = 'block';
+            contenedor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function cerrarDetalle() {
+            document.getElementById('detalle-servicio').style.display = 'none';
         }
     </script>
 </body>
