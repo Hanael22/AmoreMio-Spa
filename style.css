@@ -1,147 +1,128 @@
 :root {
-    --crema: #E4E0D4;
-    --rosa-light: #EEA7CF;
-    --rosa-dark: #845454; /* Tono café-rojizo de los botones de tu imagen */
-    --texto: #4A4A4A;
-    --blanco: #FFFFFF;
+  --crema: #E4E0D4;
+  --rosa: #EEA7CF;
+  --rosa-oscuro: #d98bb5;
+  --texto: #2b2b2b;
+  --blanco: #ffffff;
 }
 
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: var(--crema);
-    color: var(--texto);
-    scroll-behavior: smooth;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: var(--crema);
+  color: var(--texto);
+  line-height: 1.6;
 }
 
-/* Navbar */
+/* SISTEMA DE HOJAS (Solo se ve la activa) */
+.hoja {
+  display: none; /* Oculto por defecto */
+  min-height: 80vh;
+  padding: 40px 20px;
+}
+
+.hoja.activa {
+  display: block; /* Solo la hoja con clase 'activa' se muestra */
+  animation: fadeEffect 0.5s; /* Animación suave al aparecer */
+}
+
+@keyframes fadeEffect {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* NAVBAR */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    background: var(--blanco);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: var(--blanco);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.logo-nav { font-weight: bold; color: var(--rosa-dark); font-size: 1.2rem; }
-.menu a { text-decoration: none; color: var(--texto); margin: 0 15px; font-size: 0.9rem; }
-.btn-reservar { background: none; border: 1px solid blue; color: blue; padding: 5px 15px; text-decoration: none; border-radius: 5px; }
+.logo-nav {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--rosa-oscuro);
+}
 
-/* Hero Section */
+.menu a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--texto);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: var(--rosa-oscuro);
+}
+
+.btn-nav {
+  background: var(--rosa);
+  color: var(--blanco);
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-nav:hover {
+  background: var(--rosa-oscuro);
+}
+
+/* HERO SECTION */
 .hero {
-    text-align: center;
-    padding: 60px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
 }
 
 .main-logo {
-    max-width: 350px;
-    margin-bottom: 20px;
+  max-width: 380px; /* Tamaño ideal para el logo de Amore Mio */
+  height: auto;
+  margin-bottom: 30px;
 }
 
-.btn-agendar {
-    background: white;
-    border: 1px solid var(--rosa-light);
-    color: var(--rosa-light);
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-bottom: 40px;
+.hero h1 {
+  color: var(--rosa-oscuro);
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
-.hero-text h1 { color: var(--rosa-dark); font-size: 2.5rem; margin-top: 40px; }
-.hero-btns { margin-top: 25px; display: flex; justify-content: center; gap: 15px; }
-
-.btn-dark { background: var(--rosa-dark); color: white; padding: 12px 25px; border-radius: 20px; text-decoration: none; }
-.btn-light { background: #f0f0f0; color: var(--texto); padding: 12px 25px; border-radius: 20px; text-decoration: none; }
-
-/* Cards */
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 40px 5%;
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
 }
 
-.card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    cursor: pointer;
-    transition: transform 0.3s;
+.btn-principal {
+  background: var(--rosa-oscuro);
+  color: var(--blanco);
+  border: none;
+  padding: 15px 35px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(217, 139, 181, 0.3);
 }
 
-.card:hover { transform: translateY(-5px); }
-.img-placeholder { height: 180px; background: #E0E0E0; }
-.card-footer { padding: 15px; text-align: center; }
-.card-footer h3 { margin: 0; font-size: 1rem; }
-
-/* Secciones de Detalle */
-.detail-section { padding: 60px 5%; min-height: 80vh; }
-.hidden { display: none; }
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-    margin: 30px 0;
+.btn-principal:hover {
+  transform: translateY(-3px);
+  background: var(--rosa);
 }
 
-.s-item { background: white; padding: 15px; border-radius: 10px; text-align: center; font-size: 0.9rem; }
-.price-tag { text-align: center; font-size: 1.5rem; color: var(--rosa-light); font-weight: bold; margin: 20px 0; }
-
-.promo-box {
-    background: var(--rosa-light);
-    color: white;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-/* Contacto Corregido */
-.contact-container {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-    background: rgba(255,255,255,0.5);
-    padding: 30px;
-    border-radius: 15px;
-    margin-top: 20px;
-}
-
-.contact-form input, .contact-form textarea, .contact-form select {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-}
-
-.btn-send { background: var(--rosa-light); color: white; border: none; padding: 12px 30px; border-radius: 10px; cursor: pointer; width: 100%; }
-
-/* Galería Maquillaje */
-.photo-gallery {
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    padding: 20px 0;
-}
-
-.photo-slot {
-    min-width: 150px;
-    height: 200px;
-    background: #ccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-}
-
-.back-btn { display: block; margin: 30px auto; background: none; border: none; cursor: pointer; color: var(--rosa-dark); }
-
-footer { background: var(--crema); padding: 60px 5% 20px; border-top: 1px solid rgba(0,0,0,0.05); }
-.copy { text-align: center; font-size: 0.8rem; margin-top: 40px; }
+/* Responsive */
+@media (max-width: 768px) {
+  .menu { display: none; } /* En el siguiente paso podemos hacer el menú móvil */
+  .navbar { padding: 15px 20px; }
+  .hero h1 { font-size: 2rem; }
+}}
