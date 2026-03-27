@@ -1,4 +1,18 @@
-<nav class="navbar">
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Amore Mio | Luxury Spa Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="butterfly b-top">🦋</div>
+    <div class="butterfly b-bottom">🦋</div>
+
+    <nav class="navbar">
         <div class="nav-content">
             <div class="nav-logo">AMORE MIO</div>
             <div class="nav-links">
@@ -51,6 +65,23 @@
             </section>
         </div>
 
+        <div id="view-nosotros" class="view">
+            <div class="container" style="padding: 100px 20px; text-align: center;">
+                <h2>Nuestra Historia</h2>
+                <p>Estamos preparando algo especial para contarte quiénes somos.</p>
+            </div>
+        </div>
+
+        <div id="view-servicios" class="view">
+            <div class="container" style="padding: 100px 20px; text-align: center;">
+                <h2>Nuestros Servicios</h2>
+                <p>Aquí verás todos nuestros tratamientos de belleza.</p>
+            </div>
+        </div>
+
+        <div id="view-contacto" class="view">
+            </div>
+
         <footer class="main-footer">
             <div class="contact-section">
                 <h2 class="section-heading">Contacto</h2>
@@ -75,3 +106,22 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        function navegar(seccion) {
+            // 1. Ocultar todas las vistas
+            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+            // 2. Mostrar la seleccionada
+            document.getElementById('view-' + seccion).classList.add('active');
+
+            // 3. Actualizar menú
+            document.querySelectorAll('.link-item').forEach(l => l.classList.remove('active'));
+            const activeLink = document.getElementById('link-' + seccion);
+            if(activeLink) activeLink.classList.add('active');
+
+            // 4. Subir al inicio suavemente
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
