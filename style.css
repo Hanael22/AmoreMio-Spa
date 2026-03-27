@@ -1,193 +1,87 @@
-:root {
-  --crema: #E4E0D4;
-  --rosa: #EEA7CF;
-  --rosa-oscuro: #d98bb5;
-  --texto: #2b2b2b;
-  --blanco: #ffffff;
-  --font-header: 'Playfair Display', serif;
-  --font-body: 'Poppins', sans-serif;
+/* ... (Añade esto al final de tu style.css) ... */
+
+/* HERO IMAGE CONTAINER */
+.hero-image-container {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 900px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-body);
-  background-color: var(--crema);
-  color: var(--texto);
-  overflow-x: hidden;
+.img-placeholder-hero {
+    width: 100%;
+    height: 100%;
+    background: #ccc; /* Aquí pon tu imagen con background-image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: #666;
 }
 
-/* SISTEMA DE VISTAS (SPA) */
-.view {
-  display: none;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+/* FOOTER Y CONTACTO */
+.main-footer {
+    background: var(--blanco);
+    padding: 80px 0 20px;
+    margin-top: 60px;
 }
 
-.view.active {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* NAVBAR GLASSMORPHISM */
-.navbar {
-  position: sticky;
-  top: 0;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
-  padding: 15px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid var(--crema);
+    border-radius: 10px;
+    font-family: inherit;
+    outline: none;
 }
 
-.nav-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
+.btn-send {
+    background: var(--rosa-oscuro);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
 }
 
-.nav-logo {
-  font-family: var(--font-header);
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-  color: var(--rosa-oscuro);
+.map-placeholder {
+    width: 100%;
+    height: 200px;
+    background: var(--crema);
+    border-radius: 15px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: var(--texto);
-  margin: 0 15px;
-  font-size: 0.9rem;
-  font-weight: 400;
-  transition: 0.3s;
+.bottom-bar {
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid var(--crema);
+    margin-top: 40px;
+    font-size: 0.8rem;
+    color: #888;
 }
 
-.nav-links a.active, .nav-links a:hover {
-  color: var(--rosa-oscuro);
-  border-bottom: 1px solid var(--rosa-oscuro);
-}
-
-.nav-cta {
-  background: var(--rosa-oscuro);
-  color: white;
-  padding: 10px 22px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
-/* HERO SECTION */
-.hero {
-  height: 85vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 20px;
-}
-
-.hero-logo-img {
-  max-width: 320px;
-  margin-bottom: 25px;
-  animation: floatImg 4s infinite ease-in-out;
-}
-
-.hero-title {
-  font-family: var(--font-header);
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  color: var(--rosa-oscuro);
-  margin-bottom: 15px;
-}
-
-.hero-tagline {
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto 35px;
-  opacity: 0.8;
-}
-
-.hero-btn {
-  background: var(--rosa-oscuro);
-  color: white;
-  border: none;
-  padding: 16px 40px;
-  border-radius: 50px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 10px 20px rgba(217, 139, 181, 0.2);
-}
-
-.hero-btn:hover {
-  background: var(--rosa);
-  transform: translateY(-3px);
-}
-
-/* SECCIÓN ¿POR QUÉ NOSOTROS? */
-.home-intro {
-  padding: 100px 20px;
-  background: white;
-}
-
-.container-small {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.section-heading {
-  font-family: var(--font-header);
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 60px;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-}
-
-.feature-card {
-  text-align: center;
-  padding: 30px;
-  background: var(--crema);
-  border-radius: 20px;
-  transition: 0.3s;
-}
-
-.feature-card:hover {
-  transform: translateY(-10px);
-  background: var(--blanco);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-}
-
-.feature-icon { font-size: 2.5rem; display: block; margin-bottom: 20px; }
-
-/* MARIPOSAS */
-.butterfly {
-  position: fixed;
-  font-size: 1.5rem;
-  opacity: 0.3;
-  z-index: 10;
-  pointer-events: none;
-}
-
-.b-top { top: 15%; left: 5%; animation: float 6s infinite ease-in-out; }
-.b-bottom { bottom: 15%; right: 5%; animation: float 6s infinite ease-in-out 2s; }
-
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(10deg); }
-}
-
-@keyframes floatImg {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+@media (max-width: 768px) {
+    .contact-container { grid-template-columns: 1fr; }
 }
