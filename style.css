@@ -1,201 +1,188 @@
-:root{
-  --crema:#E4E0D4;
-  --rosa:#EEA7CF;
-  --rosa-oscuro:#d98bb5;
-  --texto:#2b2b2b;
-  --blanco:#ffffff;
+:root {
+    --crema: #F9F7F2;
+    --crema-oscuro: #A29278;
+    --rosa-light: #FCE4EC;
+    --rosa-spa: #EEA7CF;
+    --rosa-fuerte: #825053;
+    --gold: #D4AF37;
+    --texto: #333;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-/* BASE */
-body{
-  margin:0;
-  font-family:'Segoe UI',sans-serif;
-  background:var(--crema);
-  color:var(--texto);
-  overflow-x:hidden;
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background: var(--crema);
+    color: var(--texto);
+    overflow-x: hidden;
 }
 
-/* NAV */
-.nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 40px;
-  background:white;
-  position:sticky;
-  top:0;
-  z-index:1000;
+/* MARIPOSAS ANIMADAS */
+.butterfly-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
 }
 
-.nav a{
-  margin:0 10px;
-  text-decoration:none;
-  color:#333;
+.butterfly {
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0.3;
+    animation: float 6s infinite ease-in-out;
 }
 
-.logo{
-  font-weight:bold;
-  font-size:1.5rem;
-  color:var(--rosa-oscuro);
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
 }
 
-/* HERO */
-.hero{
-  height:90vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
+/* NAVBAR LUXURY */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+    box-shadow: var(--shadow);
 }
 
-.hero h1{
-  font-size:3rem;
-  color:var(--rosa-oscuro);
+.logo-container { text-align: center; }
+.logo-text { font-size: 1.8rem; font-weight: 800; letter-spacing: 2px; color: var(--rosa-fuerte); }
+.logo-sub { font-size: 0.6rem; letter-spacing: 3px; margin: 0; color: var(--crema-oscuro); }
+
+.menu .nav-link {
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: 600;
+    margin: 0 15px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    position: relative;
 }
 
-.hero p{
-  margin:15px 0;
+.menu .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--rosa-spa);
 }
 
-/* BOTON */
-.btn{
-  background:var(--rosa);
-  color:white;
-  padding:12px 25px;
-  border-radius:10px;
-  text-decoration:none;
-  transition:.3s;
+/* SISTEMA DE "LIBROS" (SHEETS) */
+.sheet {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.btn:hover{
-  transform:scale(1.05);
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+.active-sheet {
+    display: block !important;
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* SECCIONES */
-.section{
-  padding:70px 20px;
-  max-width:1200px;
-  margin:auto;
+/* HERO SECTION */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(249, 247, 242, 0.4), rgba(249, 247, 242, 0.4)), 
+                url('https://images.unsplash.com/photo-1544161515-436cead54573?auto=format&fit=crop&w=1500');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-h2{
-  text-align:center;
-  color:var(--rosa-oscuro);
-  margin-bottom:40px;
+h1 { font-size: 3.5rem; color: var(--rosa-fuerte); margin-bottom: 10px; }
+
+/* CARDS CON ANIMACIÓN COQUETA */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
 }
 
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
+.card {
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: 0.4s;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.03);
 }
 
-/* CARDS */
-.card{
-  background:white;
-  border-radius:20px;
-  overflow:hidden;
-  text-align:center;
-  padding-bottom:20px;
-  transition:.4s;
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(130, 80, 83, 0.15);
 }
 
-.card:hover{
-  transform:translateY(-10px) scale(1.02);
-  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+.card-img-wrapper {
+    height: 250px;
+    position: relative;
+    overflow: hidden;
 }
 
-/* IMAGENES */
-.img-placeholder{
-  height:200px;
-  background:#ddd;
+.card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
+.card:hover img { transform: scale(1.1); }
+
+.card-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(130, 80, 83, 0.4);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.3s;
+    font-weight: bold;
 }
 
-.img-placeholder.grande{
-  height:300px;
+.card:hover .card-overlay { opacity: 1; }
+
+.card-info { padding: 25px; text-align: center; }
+.card-tagline { color: var(--rosa-spa); font-style: italic; font-size: 0.9rem; }
+
+/* BOTONES */
+.btn {
+    padding: 15px 35px;
+    border-radius: 50px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* NOSOTROS */
-.nosotros-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  align-items:center;
+.btn-main { background: var(--rosa-fuerte); color: white; }
+.btn-main:hover { background: var(--rosa-spa); transform: scale(1.05); }
+
+/* LEGAL SECTION */
+.legal-section { background: white; margin-top: 50px; }
+.legal-box {
+    max-width: 800px;
+    margin: auto;
+    padding: 30px;
+    border: 1px dashed var(--crema-oscuro);
+    border-radius: 15px;
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.8;
 }
 
-/* PROMO */
-.promo{
-  display:flex;
-  justify-content:center;
-}
-
-.promo-box{
-  background:var(--rosa);
-  color:white;
-  padding:40px;
-  border-radius:20px;
-  text-align:center;
-  width:400px;
-}
-
-.oferta{
-  font-size:1.2rem;
-  font-weight:bold;
-}
-
-/* CONTACTO */
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr 300px;
-  gap:20px;
-}
-
-.form input, .form textarea{
-  width:100%;
-  padding:12px;
-  margin:8px 0;
-  border-radius:10px;
-  border:1px solid #ccc;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:30px;
-  background:var(--rosa);
-  color:white;
-}
-
-/* 🦋 MARIPOSAS */
-.butterfly{
-  position:fixed;
-  width:30px;
-  height:30px;
-  background:var(--rosa);
-  border-radius:50%;
-  opacity:0.3;
-  animation:float 10s infinite;
-}
-
-.b1{ top:20%; left:10%; }
-.b2{ top:60%; left:80%; }
-.b3{ top:40%; left:50%; }
-
-@keyframes float{
-  0%{ transform:translateY(0);}
-  50%{ transform:translateY(-40px);}
-  100%{ transform:translateY(0);}
-}
-
-/* RESPONSIVE */
-@media(max-width:800px){
-  .nosotros-grid{
-    grid-template-columns:1fr;
-  }
-
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
+@media (max-width: 768px) {
+    .navbar { padding: 15px 20px; }
+    .menu { display: none; } /* En móvil se puede añadir un menú hamburguesa luego */
+    h1 { font-size: 2.2rem; }
 }
