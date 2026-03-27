@@ -3,60 +3,99 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Amore Mio | Beauty Spa</title>
+    <title>Amore Mio | Beauty Spa & Make Up</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <div class="butterfly b1">🦋</div>
+    <div class="butterfly b2">🦋</div>
+
     <nav class="navbar">
-        <div class="logo-nav">Amore Mio</div>
-        <div class="menu">
-            <a href="javascript:void(0)" onclick="navegar('home')">Home</a>
-            <a href="javascript:void(0)" onclick="navegar('nosotros')">Nosotros</a>
-            <a href="javascript:void(0)" onclick="navegar('servicios')">Servicios</a>
-            <a href="javascript:void(0)" onclick="navegar('contacto')">Contacto</a>
+        <div class="nav-container">
+            <div class="logo-small">Amore Mio</div>
+            <div class="menu-links">
+                <a href="#" class="active" onclick="irA('home')">Inicio</a>
+                <a href="#" onclick="irA('nosotros')">Nosotros</a>
+                <a href="#" onclick="irA('servicios')">Servicios</a>
+                <a href="#" onclick="irA('contacto')">Contacto</a>
+            </div>
+            <a href="https://wa.me/5215594292811" class="nav-reserve">Agendar Cita</a>
         </div>
-        <a class="btn-nav" href="https://wa.me/5215594292811">Reservar</a>
     </nav>
 
-    <div id="hoja-home" class="hoja activa">
-        <section class="hero">
-            <div class="hero-content">
-                <div class="logo-wrapper">
-                    <img src="logo.png" alt="Amore Mio Logo" class="main-logo">
+    <div id="view-home" class="page-view active">
+        <header class="hero">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <img src="logo.png" alt="Amore Mio" class="hero-logo">
+                    <h1 class="hero-phrase">Donde la belleza florece</h1>
+                    <p class="hero-sub">Experiencias de bienestar diseñadas para resaltar tu esencia única.</p>
+                    <button class="btn-cta" onclick="irA('servicios')">Explorar Servicios</button>
                 </div>
-                
-                <h1>Tu belleza, elevada al siguiente nivel</h1>
-                <p>Experiencias únicas para cuerpo y mente</p>
-                
-                <button class="btn-principal" onclick="navegar('servicios')">Explorar Servicios</button>
+            </div>
+        </header>
+
+        <section class="value-section">
+            <div class="container">
+                <h2 class="section-title">¿Por qué elegir Amore Mio?</h2>
+                <div class="value-grid">
+                    <div class="value-item">
+                        <span class="value-icon">🌸</span>
+                        <h3>Atención Personalizada</h3>
+                        <p>Cada piel y cada cuerpo es un mundo. Creamos protocolos exclusivos para tus necesidades.</p>
+                    </div>
+                    <div class="value-item">
+                        <span class="value-icon">✨</span>
+                        <h3>Tecnología de Punta</h3>
+                        <p>Contamos con aparatología de última generación para resultados visibles desde la primera sesión.</p>
+                    </div>
+                    <div class="value-item">
+                        <span class="value-icon">🦋</span>
+                        <h3>Espacio de Paz</h3>
+                        <p>Más que un spa, somos tu refugio personal para desconectar del mundo y conectar contigo.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
 
-    <div id="hoja-nosotros" class="hoja"></div>
-    <div id="hoja-servicios" class="hoja"></div>
-    <div id="hoja-contacto" class="hoja"></div>
+    <div id="view-nosotros" class="page-view">
+        <div class="container">
+            <h2>Nosotros</h2>
+            <p>Sección en construcción...</p>
+        </div>
+    </div>
+    
+    <div id="view-servicios" class="page-view">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <p>Sección en construcción...</p>
+        </div>
+    </div>
 
     <script>
-        // Función para cambiar de "Hoja" como en Excel
-        function navegar(idHoja) {
-            // 1. Ocultar todas las hojas
-            const hojas = document.querySelectorAll('.hoja');
-            hojas.forEach(hoja => {
-                hoja.classList.remove('activa');
+        // LA MAGIA DE LA NAVEGACIÓN
+        function irA(seccion) {
+            // Ocultamos todas las "páginas"
+            document.querySelectorAll('.page-view').forEach(view => {
+                view.classList.remove('active');
             });
 
-            // 2. Mostrar solo la hoja seleccionada
-            const destino = document.getElementById('hoja-' + idHoja);
-            if (destino) {
-                destino.classList.add('activa');
-            }
+            // Mostramos la que elegimos
+            const vistaDestino = document.getElementById('view-' + seccion);
+            vistaDestino.classList.add('active');
 
-            // 3. Subir al inicio de la página automáticamente
+            // Actualizamos el menú
+            document.querySelectorAll('.menu-links a').forEach(link => {
+                link.classList.remove('active');
+                if(link.innerText.toLowerCase() === seccion) link.classList.add('active');
+            });
+
+            // Scroll al inicio
             window.scrollTo(0, 0);
         }
     </script>
-
 </body>
 </html>
