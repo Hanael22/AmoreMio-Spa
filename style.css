@@ -1,3 +1,4 @@
+/* 1. CONFIGURACIÓN Y VARIABLES */
 :root {
   --crema: #E4E0D4;
   --rosa: #EEA7CF;
@@ -6,23 +7,30 @@
   --blanco: #ffffff;
   --font-header: 'Playfair Display', serif;
   --font-body: 'Poppins', sans-serif;
+  --shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: var(--font-body);
   background-color: var(--crema);
   color: var(--texto);
   overflow-x: hidden;
+  line-height: 1.6;
 }
 
-/* SISTEMA DE VISTAS (SPA) */
+/* 2. SISTEMA DE VISTAS (SPA) */
 .view {
   display: none;
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 60vh;
 }
 
 .view.active {
@@ -31,12 +39,13 @@ body {
   transform: translateY(0);
 }
 
-/* NAVBAR GLASSMORPHISM */
+/* 3. NAVEGACIÓN (Navbar) */
 .navbar {
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   z-index: 1000;
   padding: 15px 0;
   border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -48,14 +57,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 25px;
 }
 
 .nav-logo {
   font-family: var(--font-header);
   font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: 2px;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
   color: var(--rosa-oscuro);
 }
 
@@ -64,65 +73,89 @@ body {
   color: var(--texto);
   margin: 0 15px;
   font-size: 0.9rem;
-  font-weight: 400;
+  font-weight: 500;
+  transition: 0.3s;
+  position: relative;
+}
+
+.nav-links a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--rosa-oscuro);
   transition: 0.3s;
 }
 
-.nav-links a.active, .nav-links a:hover {
-  color: var(--rosa-oscuro);
-  border-bottom: 1px solid var(--rosa-oscuro);
+.nav-links a.active:after, .nav-links a:hover:after {
+  width: 100%;
 }
 
 .nav-cta {
   background: var(--rosa-oscuro);
   color: white;
-  padding: 10px 22px;
+  padding: 12px 25px;
   border-radius: 50px;
   text-decoration: none;
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(217, 139, 181, 0.3);
 }
 
-/* HERO SECTION */
+.nav-cta:hover {
+  background: var(--rosa);
+  transform: scale(1.05);
+}
+
+/* 4. HERO SECTION */
 .hero {
-  height: 85vh;
+  padding: 80px 20px 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 20px;
+}
+
+.hero-inner {
+  max-width: 900px;
 }
 
 .hero-logo-img {
-  max-width: 320px;
-  margin-bottom: 25px;
+  max-width: 280px;
+  height: auto;
+  margin-bottom: 20px;
   animation: floatImg 4s infinite ease-in-out;
 }
 
 .hero-title {
   font-family: var(--font-header);
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
   color: var(--rosa-oscuro);
-  margin-bottom: 15px;
+  line-height: 1.1;
+  margin-bottom: 20px;
 }
 
 .hero-tagline {
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto 35px;
-  opacity: 0.8;
+  font-size: 1.15rem;
+  max-width: 650px;
+  margin: 0 auto 40px;
+  opacity: 0.85;
 }
 
 .hero-btn {
   background: var(--rosa-oscuro);
   color: white;
   border: none;
-  padding: 16px 40px;
+  padding: 18px 45px;
   border-radius: 50px;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
-  box-shadow: 0 10px 20px rgba(217, 139, 181, 0.2);
+  box-shadow: 0 10px 25px rgba(217, 139, 181, 0.25);
 }
 
 .hero-btn:hover {
@@ -130,156 +163,168 @@ body {
   transform: translateY(-3px);
 }
 
-/* SECCIÓN ¿POR QUÉ NOSOTROS? */
-.home-intro {
-  padding: 100px 20px;
-  background: white;
+.hero-image-container {
+  margin-top: 60px;
+  width: 100%;
+  height: 450px;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.1);
 }
 
-.container-small {
-  max-width: 1000px;
-  margin: 0 auto;
+.img-placeholder-hero {
+  width: 100%;
+  height: 100%;
+  background: #dcdcdc url('tu-imagen-aqui.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 5. SECCIÓN VALORES */
+.home-intro {
+  padding: 100px 20px;
+  background: var(--blanco);
 }
 
 .section-heading {
   font-family: var(--font-header);
   text-align: center;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw, 2.8rem);
   margin-bottom: 60px;
+  color: var(--texto);
 }
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .feature-card {
   text-align: center;
-  padding: 30px;
+  padding: 45px 30px;
   background: var(--crema);
-  border-radius: 20px;
-  transition: 0.3s;
+  border-radius: 25px;
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .feature-card:hover {
-  transform: translateY(-10px);
-  background: var(--blanco);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+  transform: translateY(-12px);
+  background: white;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
 }
 
-.feature-icon { font-size: 2.5rem; display: block; margin-bottom: 20px; }
+.feature-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 25px;
+}
 
-/* MARIPOSAS */
+/* 6. FOOTER Y CONTACTO */
+.main-footer {
+  background: var(--blanco);
+  padding: 100px 0 30px;
+  margin-top: 0; /* Ya no hace falta margen porque el fondo es blanco */
+  border-top: 1px solid rgba(0,0,0,0.03);
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 18px;
+  margin-bottom: 20px;
+  border: 1px solid #eee;
+  background: #fdfdfd;
+  border-radius: 15px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  border-color: var(--rosa);
+  outline: none;
+  background: white;
+}
+
+.btn-send {
+  background: var(--rosa-oscuro);
+  color: white;
+  border: none;
+  padding: 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.contact-info p {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 250px;
+  background: var(--crema);
+  border-radius: 20px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bottom-bar {
+  text-align: center;
+  padding-top: 50px;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 80px;
+  font-size: 0.85rem;
+  color: #999;
+}
+
+/* 7. ANIMACIONES */
 .butterfly {
   position: fixed;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   opacity: 0.3;
-  z-index: 10;
+  z-index: 50;
   pointer-events: none;
 }
 
-.b-top { top: 15%; left: 5%; animation: float 6s infinite ease-in-out; }
-.b-bottom { bottom: 15%; right: 5%; animation: float 6s infinite ease-in-out 2s; }
+.b-top { top: 12%; left: 6%; animation: float 7s infinite ease-in-out; }
+.b-bottom { bottom: 12%; right: 6%; animation: float 7s infinite ease-in-out 2.5s; }
 
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(10deg); }
+  50% { transform: translateY(-30px) rotate(15deg); }
 }
 
 @keyframes floatImg {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-15px); }
 }
 
-/* ... (Añade esto al final de tu style.css) ... */
-
-/* HERO IMAGE CONTAINER */
-.hero-image-container {
-    margin-top: 50px;
-    width: 100%;
-    max-width: 900px;
-    height: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+/* 8. RESPONSIVE */
+@media (max-width: 900px) {
+  .contact-container { grid-template-columns: 1fr; }
+  .hero-image-container { height: 300px; }
+  .nav-links { display: none; } /* Aquí podrías luego hacer un menú hamburguesa */
 }
-
-.img-placeholder-hero {
-    width: 100%;
-    height: 100%;
-    background: #ccc; /* Aquí pon tu imagen con background-image */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    color: #666;
-}
-
-/* FOOTER Y CONTACTO */
-.main-footer {
-    background: var(--blanco);
-    padding: 80px 0 20px;
-    margin-top: 60px;
-}
-
-.contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid var(--crema);
-    border-radius: 10px;
-    font-family: inherit;
-    outline: none;
-}
-
-.btn-send {
-    background: var(--rosa-oscuro);
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 50px;
-    cursor: pointer;
-    width: 100%;
-    font-weight: 600;
-}
-
-.map-placeholder {
-    width: 100%;
-    height: 200px;
-    background: var(--crema);
-    border-radius: 15px;
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.7rem;
-}
-
-.bottom-bar {
-    text-align: center;
-    padding-top: 40px;
-    border-top: 1px solid var(--crema);
-    margin-top: 40px;
-    font-size: 0.8rem;
-    color: #888;
-}
-
-@media (max-width: 768px) {
-    .contact-container { grid-template-columns: 1fr; }
-}
-
 /* ESTILOS SECCIÓN NOSOTROS */
 .nosotros-section {
     padding: 100px 20px;
@@ -337,7 +382,6 @@ body {
         box-shadow: 10px 10px 0px var(--rosa);
     }
 }
-
 /* ESTILOS SECCIÓN SERVICIOS */
 .servicios-section {
     padding: 80px 20px;
@@ -576,9 +620,3 @@ body {
     }
     .f2 { grid-column: auto; grid-row: auto; }
 }
-
-.f1 { background-image: url('foto1.jpg'); }
-.f2 { background-image: url('foto2.jpg'); }
-.f3 { background-image: url('foto3.jpg'); }
-.f4 { background-image: url('foto4.jpg'); }
-.f5 { background-image: url('foto5.jpg'); }
