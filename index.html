@@ -184,80 +184,32 @@
             <div class="foto-item f4">FOTO 4</div>
             <div class="foto-item f5">FOTO 5</div>
         </div>
-    </div>
-</div>
+    </div> </div> </section> </div> <div id="view-contacto" class="view">
+    <section class="contact-section">
+        <h2 class="section-heading">Contacto</h2>
+        <div class="contact-container">
+            <form class="contact-form">
+                <input type="text" placeholder="Tu Nombre">
+                <input type="tel" placeholder="Tu Teléfono">
+                <textarea placeholder="¿En qué servicio estás interesada?"></textarea>
+                <button type="button" class="btn-send">Enviar Mensaje</button>
+            </form>
+            <div class="contact-info">
+                <p><strong>WhatsApp:</strong> 55 79 69 66 78</p>
+                <p><strong>Horario:</strong> Lun - Sáb 9:00 - 19:00</p>
+                <div class="map-placeholder">
+                    <span>MAPA DE UBICACIÓN AQUÍ</span>
+                </div>
+            </div>
+        </div>
     </section>
-            </div>
+</div>
 
-            <div class="servicio-card" onclick="toggleDetalle('gluteos')">
-                <div class="servicio-img-wrapper">
-                    <div class="img-placeholder-serv">IMAGEN GLÚTEOS</div>
-                    <div class="badge-precio">$500 / Sesión</div>
-                </div>
-                <div class="servicio-info">
-                    <h3>Glúteos Perfectos</h3>
-                    <p class="frase-servicio">Duraznito perfecto: firmeza y volumen natural.</p>
-                    <div class="promo-mini">10 sesiones por $2,500</div>
-                    <div class="inauguracion-tag">🎁 Inauguración: 10 ses. x $2,000 + Regalo</div>
-                </div>
-            </div>
-
-            <div class="servicio-card" onclick="toggleDetalle('piernas')">
-                <div class="servicio-img-wrapper">
-                    <div class="img-placeholder-serv">IMAGEN PIERNAS</div>
-                    <div class="badge-precio">$400 / Sesión</div>
-                </div>
-                <div class="servicio-info">
-                    <h3>Piernas de Seda</h3>
-                    <p class="frase-servicio">Adiós piel naranja 🍊. Piernas suaves y tonificadas.</p>
-                    <div class="promo-mini">10 sesiones por $2,500</div>
-                    <div class="inauguracion-tag">🎁 Inauguración: 10 ses. x $2,000 + Regalo</div>
-                </div>
-            </div>
-
-            <div class="servicio-card no-list">
-                <div class="servicio-img-wrapper">
-                    <div class="img-placeholder-serv">IMAGEN BRAZOS</div>
-                    <div class="badge-precio">$400 / Sesión</div>
-                </div>
-                <div class="servicio-info">
-                    <h3>Espalda y Brazos</h3>
-                    <p class="frase-servicio">Define y reafirma. Ideal para lucir cualquier vestido.</p>
-                    <div class="promo-mini">10 sesiones por $2,500</div>
-                    <div class="inauguracion-tag">🎁 Inauguración: 10 ses. x $2,000 + Regalo</div>
-                </div>
-            </div>
-        </div>
+<footer class="main-footer">
+    <div class="bottom-bar">
+        <p>© 2026 Amore Mio Beauty Spa | Todos los derechos reservados.</p>
     </div>
-</section>
-        </div>
-
-        <div id="view-contacto" class="view">
-            </div>
-
-        <footer class="main-footer">
-            <div class="contact-section">
-                <h2 class="section-heading">Contacto</h2>
-                <div class="contact-container">
-                    <form class="contact-form">
-                        <input type="text" placeholder="Tu Nombre">
-                        <input type="tel" placeholder="Tu Teléfono">
-                        <textarea placeholder="¿En qué servicio estás interesada?"></textarea>
-                        <button type="button" class="btn-send">Enviar Mensaje</button>
-                    </form>
-                    <div class="contact-info">
-                        <p><strong>WhatsApp:</strong> 55 79 69 66 78</p>
-                        <p><strong>Horario:</strong> Lun - Sáb 9:00 - 19:00</p>
-                        <div class="map-placeholder">
-                            <span>MAPA DE UBICACIÓN AQUÍ</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom-bar">
-                <p>© 2026 Amore Mio Beauty Spa | Todos los derechos reservados.</p>
-            </div>
-        </footer>
+</footer>
     </div>
 
     <script>
@@ -314,6 +266,21 @@
         function cerrarDetalle() {
             document.getElementById('detalle-servicio').style.display = 'none';
         }
+        
+document.querySelector('.btn-send').onclick = function() {
+    const nombre = document.querySelector('input[placeholder="Tu Nombre"]').value;
+    const tel = document.querySelector('input[placeholder="Tu Teléfono"]').value;
+    const servicio = document.querySelector('textarea').value;
+
+    if(!nombre || !tel) {
+        alert("Por favor, completa tu nombre y teléfono.");
+        return;
+    }
+    
+    const mensaje = `Hola Amore Mio, mi nombre es ${nombre}. Mi tel es ${tel}. Estoy interesada en: ${servicio}`;
+    const url = `https://wa.me/525579696678?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
+};
     </script>
 </body>
 </html>
