@@ -149,6 +149,18 @@
                         <div class="inauguracion-tag">🎁 Inauguración: 10 ses. x $2,000 + Regalo</div>
                     </div>
                 </div>
+                <div class="servicio-card" onclick="toggleDetalle('masajes')">
+    <div class="servicio-img-wrapper">
+        <div class="img-placeholder-serv">IMAGEN MASAJE & SPA</div>
+        <div class="badge-precio">$500 / Sesión</div>
+    </div>
+    <div class="servicio-info">
+        <h3>Masajes Relajantes</h3>
+        <p class="frase-servicio">Bienestar integral para renovar tu cuerpo y alma.</p>
+        <div class="promo-mini">Consultar paquetes de 10 sesiones</div>
+        <div class="inauguracion-tag">🎁 </div>
+    </div>
+</div>
             </div>
 
             <div id="detalle-servicio" class="detalle-container">
@@ -249,6 +261,16 @@
                 frase: "Adiós piel naranja 🍊.",
                 lista: ["Drenaje linfático", "Radiofrecuencia", "Cavitación", "Copas colombianas", "Gimnasia pasiva", "Maderoterapia", "Vacumterapia"]
             }
+            masajes: {
+                titulo: "Masajes & Tratamientos",
+                frase: "Protocolos personalizados de relajación y reducción.",
+                lista: [
+                        "Masaje reductivo", "Masaje relajante", "Masaje descontracturante", 
+                        "Drenaje linfático", "Maderoterapia", "Levantamiento de glúteos", 
+                        "Tratamiento de anticelulitis", "Limpiezas faciales", "Cavitación", 
+                        "Radiofrecuencia", "Vacumterapia", "Gimnasia Pasiva", "Copas colombianas"
+        ]
+    }
         };
 
         function toggleDetalle(slug) {
@@ -282,7 +304,7 @@
         return;
     }
     
-    const mensaje = `Hola Amore Mio, mi nombre es ${nombre}. Mi tel es ${tel}. Estoy interesada en: ${servicio}`;
+    const mensaje = `Hola Amore Mio, mi nombre es ${nombre}. Mi tel es ${tel}. Estoy interesad@ en: ${servicio}`;
     const url = `https://wa.me/525579696678?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
 };
