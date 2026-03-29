@@ -40,21 +40,6 @@ body {
 }
 
 /* 3. NAVEGACIÓN (Navbar) */
-
-.link-item {
-    background: none;
-    border: none;
-    padding: 0;
-    font: inherit; 
-    cursor: pointer;
-    color: inherit;
-    text-decoration: none;
-}
-
-.link-item.active {
-    border-bottom: 2px solid var(--rosa-oscuro); /* Si usas una línea debajo */
-    font-weight: 500;
-}
 .navbar {
   position: sticky;
   top: 0;
@@ -83,17 +68,29 @@ body {
   color: var(--rosa-oscuro);
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: var(--texto);
-  margin: 0 15px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: 0.3s;
-  position: relative;
+/* --- ESTILOS PARA LOS BOTONES DEL MENÚ --- */
+.nav-links {
+  display: flex;
+  align-items: center;
 }
 
-.nav-links a:after {
+.link-item {
+  background: none;
+  border: none;
+  padding: 5px 0; /* Espacio vertical */
+  margin: 0 20px;  /* AQUÍ CONTROLAS LA SEPARACIÓN ENTRE PALABRAS */
+  font-family: var(--font-body); /* Para que use Poppins */
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--texto);
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+/* LA ANIMACIÓN DE LA LÍNEA ROSA */
+.link-item:after {
   content: '';
   position: absolute;
   width: 0;
@@ -101,13 +98,20 @@ body {
   bottom: -5px;
   left: 0;
   background-color: var(--rosa-oscuro);
-  transition: 0.3s;
+  transition: width 0.3s ease; /* Efecto de deslizamiento */
 }
 
-.nav-links a.active:after, .nav-links a:hover:after {
+/* CUANDO PASAS EL MOUSE Y CUANDO ESTÁ ACTIVO */
+.link-item:hover:after, 
+.link-item.active:after {
   width: 100%;
 }
 
+.link-item:hover {
+  color: var(--rosa-oscuro); /* Cambia un poco el color al pasar el mouse */
+}
+
+/* BOTÓN DE RESERVAR CITA */
 .nav-cta {
   background: var(--rosa-oscuro);
   color: white;
@@ -118,13 +122,15 @@ body {
   font-weight: 600;
   transition: 0.3s;
   box-shadow: 0 4px 15px rgba(217, 139, 181, 0.3);
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
 }
 
 .nav-cta:hover {
   background: var(--rosa);
   transform: scale(1.05);
 }
-
 /* 4. HERO SECTION */
 .hero {
   padding: 80px 20px 40px;
