@@ -205,7 +205,7 @@
                     </form>
                     <div class="contact-info">
                         <p><strong>WhatsApp:</strong> 55 79 69 66 78</p>
-                        <p><strong>Horario:</strong> Lun - Sáb 9:00 - 19:00</p>
+                        <p><strong>Horario:</strong> Lunes - Domingo 8:00 - 19:00</p>
                         <div class="map-placeholder">
                             <span>MAPA DE UBICACIÓN AQUÍ</span>
                         </div>
@@ -272,6 +272,20 @@
         function cerrarDetalle() {
             document.getElementById('detalle-servicio').style.display = 'none';
         }
+        document.querySelector('.btn-send').onclick = function() {
+    const nombre = document.querySelector('input[placeholder="Tu Nombre"]').value;
+    const tel = document.querySelector('input[placeholder="Tu Teléfono"]').value;
+    const servicio = document.querySelector('textarea').value;
+
+    if(!nombre || !tel) {
+        alert("Por favor, completa tu nombre y teléfono.");
+        return;
+    }
+    
+    const mensaje = `Hola Amore Mio, mi nombre es ${nombre}. Mi tel es ${tel}. Estoy interesada en: ${servicio}`;
+    const url = `https://wa.me/525579696678?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
+};
     </script>
 </body>
 </html>
