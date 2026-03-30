@@ -142,7 +142,7 @@
                     </div>
                 </div>
 
-                <div class="servicio-card no-list">
+                <div class="servicio-card" onclick="toggleDetalle('brazos')">
                     <div class="servicio-img-wrapper">
                         <div class="img-placeholder-serv" style="background: url('espalda.jpg') center/cover;"></div>
                         <div class="badge-precio">$400 / Sesión</div>
@@ -217,7 +217,7 @@
                     <form class="contact-form">
                         <input type="text" placeholder="Tu Nombre">
                         <input type="tel" placeholder="Tu Teléfono">
-                        <textarea placeholder="¿En qué servicio estás interesada?"></textarea>
+                        <textarea placeholder="¿En qué servicio estás interesad@?"></textarea>
                         <button type="button" class="btn-send">Enviar Mensaje</button>
                     </form>
                     <div class="contact-info">
@@ -256,7 +256,7 @@
             cintura: {
                 titulo: "Cintura de Barbie",
                 frase: "Esculpe la figura de tus sueños.",
-                lista: ["Maderoterapia", "Cavitación", "Radiofrecuencia", "Cierre de costillas", "Masaje manual", "Mesoterapia", "Vendas frías", "Vacumterapia", "Drenaje linfático", "Gimnasia pasiva"]
+                lista: ["Maderoterapia", "Cavitación", "Radiofrecuencia", "Cierre de costillas", "Masaje manual", "Mesoterapia (Preguntar)", "Vendas frías (Solo líquido)", "Vacumterapia", "Drenaje linfático", "Gimnasia pasiva"]
             },
             gluteos: {
                 titulo: "Glúteos Perfectos",
@@ -265,16 +265,21 @@
             },
             piernas: {
                 titulo: "Piernas de Seda",
-                frase: "Adiós piel naranja 🍊.",
+                frase: "Adiós a la piel de naranja 🍊.",
                 lista: ["Drenaje linfático", "Radiofrecuencia", "Cavitación", "Copas colombianas", "Gimnasia pasiva", "Maderoterapia", "Vacumterapia"]
             },
+            brazos: {
+    titulo: "Espalda y Brazos",
+    frase: "Define y reafirma tu silueta.",
+    lista: ["Radiofrecuencia", "Masaje reductivo", "Maderoterapia", "Gimnasia pasiva", "Drenaje linfático"]
+                    },
             masajes: {
                 titulo: "Masajes & Tratamientos",
                 frase: "Protocolos personalizados de relajación y reducción.",
                 lista: [
                         "Masaje reductivo", "Masaje relajante", "Masaje descontracturante", 
                         "Drenaje linfático", "Maderoterapia", "Levantamiento de glúteos", 
-                        "Tratamiento de anticelulitis", "Limpiezas faciales", "Cavitación", 
+                        "Tratamiento anticelulitis", "Limpiezas faciales", "Cavitación", 
                         "Radiofrecuencia", "Vacumterapia", "Gimnasia Pasiva", "Copas colombianas"
                         ]
                      }
