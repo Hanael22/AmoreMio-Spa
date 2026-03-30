@@ -315,19 +315,29 @@
     const url = `https://wa.me/525579696678?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
     };
-    const menuBtn = document.getElementById('mobile-menu');
-const navLinks = document.getElementById('nav-links');
+    // --- LÓGICA DEL MENÚ MÓVIL CORREGIDA ---
+const menuBtn = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
 
-menuBtn.addEventListener('click', () => {
+menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Evita que el clic se pierda
     navLinks.classList.toggle('active');
+    console.log("Menú clickeado, clase active:", navLinks.classList.contains('active'));
 });
 
-// Opcional: Cerrar el menú automáticamente al tocar una opción
+// Cerrar el menú al hacer clic en cualquier enlace
 document.querySelectorAll('.link-item').forEach(link => {
     link.addEventListener('click', () => {
         navLinks.classList.remove('active');
-        });
     });
+});
+
+// Cerrar si hacen clic fuera del menú
+document.addEventListener('click', (e) => {
+    if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+        navLinks.classList.remove('active');
+    }
+});
         
     </script>
 </body>
