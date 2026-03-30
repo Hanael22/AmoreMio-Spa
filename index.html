@@ -14,6 +14,11 @@
     <nav class="navbar">
         <div class="nav-content">
             <div class="nav-logo">AMORE MIO</div>
+            <button class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+            </button>
             <div class="nav-links">
                 <button onclick="navegar('home')" class="link-item active" id="link-home">Inicio</button>
                 <button onclick="navegar('nosotros')" class="link-item" id="link-nosotros">Nosotros</button>
@@ -307,7 +312,21 @@
     const mensaje = `Hola Amore Mio, mi nombre es ${nombre}. Mi tel es ${tel}. Estoy interesad@ en: ${servicio}`;
     const url = `https://wa.me/525579696678?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
-};
+    };
+    const menuBtn = document.getElementById('mobile-menu');
+const navLinks = document.getElementById('nav-links');
+
+menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// Opcional: Cerrar el menú automáticamente al tocar una opción
+document.querySelectorAll('.link-item').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});
+        
     </script>
 </body>
 </html>
