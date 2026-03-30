@@ -363,6 +363,20 @@ body {
     /* Escondemos el menú horizontal y el botón de reserva */
     .nav-links, .nav-cta { 
         display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.98);
+        padding: 40px 0;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        gap: 25px;
+        z-index: 999;
+        /* Animación de entrada */
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.4s ease;
     }
 
     /* Estilos cuando el menú está ACTIVO (clic en barritas) */
@@ -385,6 +399,7 @@ body {
         font-size: 1.2rem;
         width: 100%;
         text-align: center;
+      padding: 10px 0;
     }
 
     /* Ajustes de otras secciones para móviles */
