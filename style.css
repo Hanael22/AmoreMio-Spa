@@ -340,10 +340,15 @@ body {
   50% { transform: translateY(-15px); }
 }
 
-/* --- CONFIGURACIÓN MENÚ MÓVIL UNIFICADA --- */
+.menu-toggle {
+    display: none;
+}
+
 @media (max-width: 900px) {
+
+    /* BOTÓN HAMBURGUESA */
     .menu-toggle {
-        display: flex; /* Muestra las barritas */
+        display: flex;
         flex-direction: column;
         cursor: pointer;
         background: none;
@@ -352,60 +357,61 @@ body {
     }
 
     .menu-toggle span {
-        display: block;
         width: 25px;
         height: 3px;
         background-color: var(--rosa-oscuro);
-        margin: 2px 0;
-        transition: 0.4s;
+        margin: 4px 0;
+        transition: 0.3s;
     }
 
-    /* Escondemos el menú horizontal y el botón de reserva */
-    .nav-links, .nav-cta { 
-        display: none; /* Escondido por defecto */
-        flex-direction: column;
+    /* MENÚ OCULTO POR DEFECTO */
+    .nav-links {
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: white;
-        padding: 20px 0;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        z-index: 999;
-        /* Animación de entrada */
-        opacity: 0;
-        transform: translateY(-20px);
-        transition: all 0.4s ease;
-    }
-
-    /* Estilos cuando el menú está ACTIVO (clic en barritas) */
-    .nav-links.active {
-        display: flex !important;
+        background: white;
         flex-direction: column;
-        position: absolute;
-        top: 100%; /* Justo debajo de la navbar */
-        left: 0;
-        width: 100%;
-        background-color: white;
-        padding: 30px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        gap: 20px;
-        z-index: 999;
+        align-items: center;
+        padding: 20px 0;
+        gap: 15px;
+
+        /* 👇 CLAVE */
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-20px);
+        transition: all 0.3s ease;
     }
 
+    /* CUANDO SE ABRE */
+    .nav-links.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    /* LINKS */
     .link-item {
         margin: 0;
         font-size: 1.2rem;
         width: 100%;
         text-align: center;
-      padding: 10px 0;
+        padding: 10px 0;
     }
 
-    /* Ajustes de otras secciones para móviles */
-    .nosotros-content, .maquillaje-grid, .contact-container {
+    /* OCULTAR BOTÓN DE RESERVA EN MÓVIL */
+    .nav-cta {
+        display: none;
+    }
+
+    /* AJUSTES GENERALES */
+    .nosotros-content,
+    .maquillaje-grid,
+    .contact-container {
         grid-template-columns: 1fr;
         text-align: center;
     }
+}
     
     .nosotros-image-box {
         height: 350px;
