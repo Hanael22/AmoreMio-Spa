@@ -641,3 +641,43 @@ body {
     }
     .f2 { grid-column: auto; grid-row: auto; }
 }
+/* Estilos para el botón hamburguesa (oculto en laptop) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--rosa-oscuro);
+    margin: 2px 0;
+    transition: 0.4s;
+}
+
+/* --- ESTILOS PARA CELULARES --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Aparece el botón en celulares */
+    }
+
+    .nav-links {
+        display: none; /* Escondemos el menú por defecto */
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Clase para mostrar el menú cuando toquemos el botón */
+    .nav-links.active {
+        display: flex;
+    }
+}
