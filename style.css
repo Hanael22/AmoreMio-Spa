@@ -716,3 +716,45 @@ body {
     }
     .f2 { grid-column: auto; grid-row: auto; }
 }
+/* --- ESTILOS REDES SOCIALES FOOTER --- */
+.bottom-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* Espacio entre el logo y el botón */
+    margin-bottom: 10px;
+}
+
+.footer-icon-logo {
+    height: 60px; /* Ajusta según el tamaño de tu logo secundario */
+    width: auto;
+    opacity: 0.9;
+}
+
+.instagram-btn img {
+    height: 45px; /* Ajusta el tamaño del recorte de Instagram */
+    width: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+}
+
+.instagram-btn:hover img {
+    transform: scale(1.1); /* Efecto de agrandado suave */
+    filter: brightness(1.1); /* Brilla un poco al pasar el mouse */
+}
+
+/* Ajuste para móviles */
+@media (max-width: 600px) {
+    .social-links {
+        gap: 20px;
+    }
+    .footer-icon-logo { height: 50px; }
+    .instagram-btn img { height: 40px; }
+}
