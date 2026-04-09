@@ -709,7 +709,7 @@ body {
 .f3 { background-image: url('maquillaje1.jpeg'); }
 .f4 { background-image: url('maquillaje4.jpeg'); }
 .f5 { background-image: url('maquillaje5.jpeg'); }
-.f6 { background-image: url('maquillaje6.jpeg'); }
+
 /* Responsive */
 @media (max-width: 900px) {
     .maquillaje-grid { grid-template-columns: 1fr; }
